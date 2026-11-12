@@ -46,7 +46,7 @@ A selection of public repositories and engineering initiatives:
 | [CLT ALY](https://github.com/zopair/-CLT_ALY) | Android mobile project | Android project; no web UI URL verified |
 | [Amazon Work — The Happy Little Train](https://github.com/zopair/Amazon-work-) | Bilingual publishing pipeline | Publishing project; no live web UI verified |
 
-> Repository descriptions summarize project direction; see each repository for its current implementation, documentation, and status.
+> Only links labelled as live interfaces point to deployed project UIs. “Not deployed” means no verified public UI endpoint is currently available.
 
 ## Engineering Principles
 
