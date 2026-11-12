@@ -23,6 +23,7 @@
 - [Rakez — Performance Dashboard](https://zopair.github.io/Zubair_AI_Army/rakez/)
 - [SecurityMatrix — SOC](https://zopair.github.io/security_matrix/)
 - [OpenConnect](https://zopair.github.io/CLT-Core-Monorepo/)
+- [CarExit — سوق التخارج من عقود السيارات](https://zopair.github.io/-CarExit-Platform/)
 
 ## About
 
