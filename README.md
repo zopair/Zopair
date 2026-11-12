@@ -14,6 +14,25 @@
 
 ---
 
+## Project Portfolio — 14 Live Interfaces
+
+| Project | Repository | Live interface |
+| --- | --- | --- |
+| Zubair Engineering Lab | [Repository](https://github.com/zopair/Zubair-Engineering-Lab) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/engineering-lab/) |
+| CLT Platform | [Repository](https://github.com/zopair/CLT-Platform) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-platform/) |
+| Sovereign AI Arsenal | [Repository](https://github.com/zopair/Sovereign-AI-Arsenal) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/sovereign-ai-arsenal/) |
+| Zubair AI Army | [Repository](https://github.com/zopair/Zubair_AI_Army) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/zubair-ai-army/) |
+| Zubair Hunter AI | [Repository](https://github.com/zopair/Zubair-Hunter-AI) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/zubair-hunter-ai/) |
+| InWork | [Repository](https://github.com/zopair/inwork) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/inwork/) |
+| NexaPay | [Repository](https://github.com/zopair/NexaPay-Nexa-Next-Generation-Pay) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/nexapay/) |
+| Security Matrix | [Repository](https://github.com/zopair/security_matrix) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/security-matrix/) |
+| SINC-OS | [Repository](https://github.com/zopair/SINC-OS) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/sinc-os/) |
+| CLT Core Monorepo | [Repository](https://github.com/zopair/CLT-Core-Monorepo) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-core/) |
+| CLT ALY | [Repository](https://github.com/zopair/-CLT_ALY) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-aly/) |
+| Amazon Work — The Happy Little Train | [Repository](https://github.com/zopair/Amazon-work-) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/amazon-work/) |
+| CarExit | [Repository](https://github.com/zopair/-CarExit-Platform) | [Open](https://zopair.github.io/-CarExit-Platform/) |
+| EasyHub | [Repository](https://github.com/zopair/EasyHub-) | [Open](https://zopair.github.io/EasyHub-/) |
+
 **Live project interfaces — verified 12 Nov 2026:**
 
 - [Zubair Engineering Lab — Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/)
