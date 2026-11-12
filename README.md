@@ -24,6 +24,7 @@
 - [SecurityMatrix — SOC](https://zopair.github.io/security_matrix/)
 - [OpenConnect](https://zopair.github.io/CLT-Core-Monorepo/)
 - [CarExit — سوق التخارج من عقود السيارات](https://zopair.github.io/-CarExit-Platform/)
+- [EasyHub — Intent, resolved](https://zopair.github.io/EasyHub-/)
 
 ## About
 
