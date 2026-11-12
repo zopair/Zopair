@@ -14,7 +14,15 @@
 
 ---
 
-**Live web interfaces:** [Engineering portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) · [InWork Beta](https://zopair.github.io/inwork/) · [NexaPay](https://zopair.github.io/NexaPay-Nexa-Next-Generation-Pay/) · [Riwaq](https://zopair.github.io/Zubair_AI_Army/) · [Rakez Dashboard](https://zopair.github.io/Zubair_AI_Army/rakez/) · [SecurityMatrix](https://zopair.github.io/security_matrix/) · [OpenConnect](https://zopair.github.io/CLT-Core-Monorepo/)
+**Live project interfaces — verified 12 Nov 2026:**
+
+- [Zubair Engineering Lab — Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/)
+- [InWork — Beta](https://zopair.github.io/inwork/)
+- [NexaPay](https://zopair.github.io/NexaPay-Nexa-Next-Generation-Pay/)
+- [Riwaq — رِواق](https://zopair.github.io/Zubair_AI_Army/)
+- [Rakez — Performance Dashboard](https://zopair.github.io/Zubair_AI_Army/rakez/)
+- [SecurityMatrix — SOC](https://zopair.github.io/security_matrix/)
+- [OpenConnect](https://zopair.github.io/CLT-Core-Monorepo/)
 
 ## About
 
@@ -33,16 +41,16 @@ A selection of public repositories and engineering initiatives:
 
 | Project | Focus | Live interface status |
 | --- | --- | --- |
-| [Zubair Engineering Lab](https://github.com/zopair/Zubair-Engineering-Lab) | Engineering hub and reproducible delivery | [Open portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) |
+| [Zubair Engineering Lab](https://github.com/zopair/Zubair-Engineering-Lab) | Engineering hub and reproducible delivery | [Live portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) |
 | [CLT Platform](https://github.com/zopair/CLT-Platform) | Orchestration and platform engineering | Repository; no live application URL verified |
 | [Sovereign AI Arsenal](https://github.com/zopair/Sovereign-AI-Arsenal) | AI repository intelligence | Frontend source exists; public deployment not verified |
-| [Zubair AI Army](https://github.com/zopair/Zubair_AI_Army) | Modular AI systems | [Riwaq](https://zopair.github.io/Zubair_AI_Army/) · [Rakez dashboard](https://zopair.github.io/Zubair_AI_Army/rakez/) |
+| [Zubair AI Army](https://github.com/zopair/Zubair_AI_Army) | Modular AI systems | [Riwaq](https://zopair.github.io/Zubair_AI_Army/) · [Rakez](https://zopair.github.io/Zubair_AI_Army/rakez/) |
 | [Zubair Hunter AI](https://github.com/zopair/Zubair-Hunter-AI) | Quant research and data-quality lab | Repository; no live application URL verified |
-| [InWork](https://github.com/zopair/inwork) | Arabic-first workforce matching | [Open InWork Beta](https://zopair.github.io/inwork/) |
-| [NexaPay](https://github.com/zopair/NexaPay-Nexa-Next-Generation-Pay) | Multicurrency fintech UX concept | [Open NexaPay](https://zopair.github.io/NexaPay-Nexa-Next-Generation-Pay/) |
-| [Security Matrix](https://github.com/zopair/security_matrix) | Defensive cyber-deception | [Open SecurityMatrix SOC](https://zopair.github.io/security_matrix/) |
+| [InWork](https://github.com/zopair/inwork) | Arabic-first workforce matching | [Live Beta](https://zopair.github.io/inwork/) |
+| [NexaPay](https://github.com/zopair/NexaPay-Nexa-Next-Generation-Pay) | Multicurrency fintech UX concept | [Live interface](https://zopair.github.io/NexaPay-Nexa-Next-Generation-Pay/) |
+| [Security Matrix](https://github.com/zopair/security_matrix) | Defensive cyber-deception | [Live SOC interface](https://zopair.github.io/security_matrix/) |
 | [SINC-OS](https://github.com/zopair/SINC-OS) | Authorized media automation | Repository; no live application URL verified |
-| [CLT Core Monorepo](https://github.com/zopair/CLT-Core-Monorepo) | Shared platform components | [OpenConnect UI](https://zopair.github.io/CLT-Core-Monorepo/) |
+| [CLT Core Monorepo](https://github.com/zopair/CLT-Core-Monorepo) | Shared platform components | [Live OpenConnect UI](https://zopair.github.io/CLT-Core-Monorepo/) |
 | [CLT ALY](https://github.com/zopair/-CLT_ALY) | Android mobile project | Android project; no web UI URL verified |
 | [Amazon Work — The Happy Little Train](https://github.com/zopair/Amazon-work-) | Bilingual publishing pipeline | Publishing project; no live web UI verified |
 
