@@ -14,7 +14,7 @@
 
 ---
 
-**Project previews:** [Browse all 12 project interfaces](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/) · [Engineering work samples](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/)
+**Project previews:** [Browse all 12 project interfaces](https://zopair.github.io/Zubair-Engineering-Lab/engineering/) · [Engineering work samples](https://zopair.github.io/Zubair-Engineering-Lab/)
 
 ## About
 
@@ -33,18 +33,18 @@ A selection of public repositories and engineering initiatives:
 
 | Project | Focus | User interface preview |
 | --- | --- | --- |
-| [Zubair Engineering Lab](https://github.com/zopair/Zubair-Engineering-Lab) | Engineering hub and reproducible delivery | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/engineering-lab/) |
-| [CLT Platform](https://github.com/zopair/CLT-Platform) | Orchestration and platform engineering | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-platform/) |
-| [Sovereign AI Arsenal](https://github.com/zopair/Sovereign-AI-Arsenal) | AI repository intelligence | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/sovereign-ai-arsenal/) |
-| [Zubair AI Army](https://github.com/zopair/Zubair_AI_Army) | Modular AI systems | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/zubair-ai-army/) |
-| [Zubair Hunter AI](https://github.com/zopair/Zubair-Hunter-AI) | Quant research and data-quality lab | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/zubair-hunter-ai/) |
-| [InWork](https://github.com/zopair/inwork) | Arabic-first workforce matching | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/inwork/) |
-| [NexaPay](https://github.com/zopair/NexaPay-Nexa-Next-Generation-Pay) | Multicurrency fintech UX concept | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/nexapay/) |
-| [Security Matrix](https://github.com/zopair/security_matrix) | Defensive cyber-deception | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/security-matrix/) |
-| [SINC-OS](https://github.com/zopair/SINC-OS) | Authorized media automation | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/sinc-os/) |
-| [CLT Core Monorepo](https://github.com/zopair/CLT-Core-Monorepo) | Shared platform components | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-core/) |
-| [CLT ALY](https://github.com/zopair/-CLT_ALY) | Android mobile project | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-aly/) |
-| [Amazon Work — The Happy Little Train](https://github.com/zopair/Amazon-work-) | Bilingual publishing pipeline | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/amazon-work/) |
+| [Zubair Engineering Lab](https://github.com/zopair/Zubair-Engineering-Lab) | Engineering hub and reproducible delivery | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/engineering/engineering-lab/) |
+| [CLT Platform](https://github.com/zopair/CLT-Platform) | Orchestration and platform engineering | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/engineering/clt-platform/) |
+| [Sovereign AI Arsenal](https://github.com/zopair/Sovereign-AI-Arsenal) | AI repository intelligence | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/engineering/sovereign-ai-arsenal/) |
+| [Zubair AI Army](https://github.com/zopair/Zubair_AI_Army) | Modular AI systems | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/engineering/zubair-ai-army/) |
+| [Zubair Hunter AI](https://github.com/zopair/Zubair-Hunter-AI) | Quant research and data-quality lab | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/engineering/zubair-hunter-ai/) |
+| [InWork](https://github.com/zopair/inwork) | Arabic-first workforce matching | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/engineering/inwork/) |
+| [NexaPay](https://github.com/zopair/NexaPay-Nexa-Next-Generation-Pay) | Multicurrency fintech UX concept | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/engineering/nexapay/) |
+| [Security Matrix](https://github.com/zopair/security_matrix) | Defensive cyber-deception | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/engineering/security-matrix/) |
+| [SINC-OS](https://github.com/zopair/SINC-OS) | Authorized media automation | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/engineering/sinc-os/) |
+| [CLT Core Monorepo](https://github.com/zopair/CLT-Core-Monorepo) | Shared platform components | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/engineering/clt-core/) |
+| [CLT ALY](https://github.com/zopair/-CLT_ALY) | Android mobile project | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/engineering/clt-aly/) |
+| [Amazon Work — The Happy Little Train](https://github.com/zopair/Amazon-work-) | Bilingual publishing pipeline | [Open preview](https://zopair.github.io/Zubair-Engineering-Lab/engineering/amazon-work/) |
 
 > Repository descriptions summarize project direction; see each repository for its current implementation, documentation, and status.
 
