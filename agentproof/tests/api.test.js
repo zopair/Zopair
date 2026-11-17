@@ -75,7 +75,9 @@ test("report email endpoint verifies the paid license and sends JSON and CSV att
         licenseKey: "valid-license-key",
         report: {
           format: "agentproof-diagnosis-v1",
+          reportId: "AP-20261117120000-ABCDE",
           generatedAt: "2026-11-17T12:00:00.000Z",
+          ruleCount: 8,
           summary: { total: 1, high: 1, medium: 0, low: 0 },
           filesScanned: 3,
           findings: [{ ruleId: "SEC-001", severity: "high", title: "Potential hard-coded secret", file: "app.js", line: 4, evidence: "ghp_abcdefghijklmnopqrstuvwxyz123456", recommendation: "Rotate the credential.", suggestedCode: "const token = process.env.TOKEN;" }]
@@ -89,6 +91,8 @@ test("report email endpoint verifies the paid license and sends JSON and CSV att
     assert.equal(sentPayload.attachments.length, 2);
     assert.deepEqual(sentPayload.attachments.map(x => x.filename).sort(), ["agentproof-diagnosis.csv", "agentproof-diagnosis.json"]);
     const json = Buffer.from(sentPayload.attachments.find(x => x.filename.endsWith(".json")).content, "base64").toString();
+    assert.match(json, /AP-20261117120000-ABCDE/);
+    assert.match(json, /"ruleCount": 8/);
     assert.match(json, /redacted: credential-like source line/);
     assert.match(json, /const token = process.env.TOKEN/);
     assert.doesNotMatch(json, /ghp_abcdefghijklmnopqrstuvwxyz123456/);
