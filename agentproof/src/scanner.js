@@ -56,7 +56,7 @@ export function summarizePublicFindings(findings) {
 }
 
 export function toDiagnosisCsv(findings) {
-  const columns = ["ruleId", "severity", "title", "file", "line", "evidence", "recommendation"];
+  const columns = ["ruleId", "severity", "title", "file", "line", "evidence", "recommendation", "suggestedCode"];
   const escapeCell = value => {
     let text = String(value ?? "");
     if (/^\s*[=+\-@]/.test(text)) text = "'" + text;
