@@ -29,13 +29,16 @@ export function scanSourceFiles(files) {
     lines.forEach((line, index) => {
       for (const rule of RULES) {
         if (rule.regex.test(line)) {
+          const sensitiveEvidence = rule.id === "SEC-001" || rule.id === "SEC-002";
           findings.push({
             ruleId: rule.id,
             severity: rule.severity,
             title: rule.title,
             file: file.name,
             line: index + 1,
-            evidence: line.trim().slice(0, 240)
+            evidence: sensitiveEvidence
+              ? "[redacted: credential-like source line]"
+              : line.trim().slice(0, 240)
           });
         }
       }
