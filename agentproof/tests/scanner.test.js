@@ -22,3 +22,16 @@ test("scanner ignores unsupported binary and empty inputs safely", () => {
   assert.deepEqual(scanSourceFiles([]), []);
   assert.deepEqual(scanSourceFiles([{ name: "image.png", content: "binary" }]), []);
 });
+
+test("paid diagnosis redacts credential-like source evidence", () => {
+  const findings = scanSourceFiles([{
+    name: "server.js",
+    content: 'const token = "ghp_abcdefghijklmnopqrstuvwxyz123456";\nfetch(url, { headers: { authorization: "Bearer abcdefghijklmnopqrstuvwxyz123456" } });'
+  }]);
+  const sensitive = findings.filter(item => item.ruleId === "SEC-001" || item.ruleId === "SEC-002");
+  assert.equal(sensitive.length, 2);
+  for (const finding of sensitive) {
+    assert.doesNotMatch(finding.evidence, /ghp_abcdefghijklmnopqrstuvwxyz123456|Bearer abcdefghijklmnopqrstuvwxyz123456/);
+    assert.match(finding.evidence, /redacted/i);
+  }
+});
