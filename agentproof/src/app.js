@@ -7,6 +7,7 @@ const scanButton = $("#scanButton");
 const licenseButton = $("#licenseButton");
 let selectedFiles = [];
 let latestFindings = [];
+let hasCompletedScan = false;
 
 const REMEDIATION = {
   "SEC-001": "Remove the exposed credential from source history, revoke or rotate it at its provider, and load the replacement from a secret manager or environment variable.",
@@ -64,6 +65,7 @@ scanButton.addEventListener("click", async () => {
       sources.push({ name: file.webkitRelativePath || file.name, content: await file.text() });
     }
     latestFindings = scanSourceFiles(sources);
+    hasCompletedScan = true;
     $("#diagnosis").hidden = true;
     $("#licenseError").hidden = true;
     const summary = summarizePublicFindings(latestFindings);
@@ -85,7 +87,7 @@ licenseButton.addEventListener("click", async () => {
   const licenseKey = $("#licenseKey").value.trim();
   const message = $("#licenseError");
   message.hidden = true;
-  if (!latestFindings.length && Number($("#total").textContent) === 0) {
+  if (!hasCompletedScan) {
     message.textContent = "Run a scan first. Your findings remain in this browser.";
     message.hidden = false;
     return;
