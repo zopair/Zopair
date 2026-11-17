@@ -13,14 +13,38 @@ let hasCompletedScan = false;
 let hasVerifiedDiagnosis = false;
 
 const REMEDIATION = {
-  "SEC-001": "Remove the exposed credential from source history, revoke or rotate it at its provider, and load the replacement from a secret manager or environment variable.",
-  "SEC-002": "Remove the hard-coded bearer value, rotate the token, and retrieve credentials from a protected runtime secret store.",
-  "CODE-001": "Avoid evaluating untrusted strings. Replace dynamic execution with an allow-listed operation map or a safe parser.",
-  "CODE-002": "Prefer textContent or safe DOM construction. If HTML is required, sanitize it with a maintained allow-list sanitizer.",
-  "CODE-003": "Avoid shell interpolation. Use a fixed executable with argument arrays, strict input validation and least-privilege execution.",
-  "CODE-004": "Enable TLS certificate validation and configure the correct trust chain instead of disabling verification.",
-  "CODE-005": "Use parameterized queries and bound parameters; never concatenate untrusted values into SQL statements.",
-  "QUALITY-001": "Remove or gate debug output before production and ensure logs do not expose secrets or personal data."
+  "SEC-001": {
+    text: "Revoke or rotate the exposed credential, remove it from source history where appropriate, and load the replacement from a protected environment or secret manager.",
+    example: "const apiKey = process.env.API_KEY;"
+  },
+  "SEC-002": {
+    text: "Do not hard-code bearer tokens. Retrieve the token from a protected runtime secret and rotate any exposed value.",
+    example: 'headers: { Authorization: `Bearer ${process.env.API_TOKEN}` }'
+  },
+  "CODE-001": {
+    text: "Avoid evaluating untrusted strings. Replace dynamic execution with an allow-listed operation map or a safe parser.",
+    example: 'const actions = { add: handleAdd, remove: handleRemove };\nconst handler = actions[actionName];\nif (!handler) throw new Error("Unsupported action");\nhandler(payload);'
+  },
+  "CODE-002": {
+    text: "Prefer textContent or safe DOM construction for untrusted values. If HTML is required, sanitize it with a maintained allow-list sanitizer.",
+    example: "element.textContent = untrustedValue;"
+  },
+  "CODE-003": {
+    text: "Avoid shell interpolation. Use a fixed executable with validated argument arrays and least-privilege execution.",
+    example: 'execFile("tool-name", [validatedArgument], callback);'
+  },
+  "CODE-004": {
+    text: "Enable TLS certificate validation and configure the correct trust chain instead of disabling verification.",
+    example: "rejectUnauthorized: true"
+  },
+  "CODE-005": {
+    text: "Use parameterized queries and bound parameters; never concatenate untrusted values into SQL statements.",
+    example: 'db.query("SELECT * FROM users WHERE id = ?", [userId]);'
+  },
+  "QUALITY-001": {
+    text: "Remove debug output from production or route it through a logger with appropriate environment and data-redaction controls.",
+    example: 'logger.debug("Operation completed", { operationId });'
+  }
 };
 
 function downloadText(filename, content, type = "application/json") {
@@ -42,10 +66,13 @@ function escapeHtml(value) {
 
 function createReport() {
   const generatedAt = new Date().toISOString();
-  const findings = latestFindings.map(finding => ({
-    ...finding,
-    recommendation: REMEDIATION[finding.ruleId] || "Review this finding with the developer who created or maintains the code and request a project-specific correction."
-  }));
+  const findings = latestFindings.map(finding => {
+    const guidance = REMEDIATION[finding.ruleId] || {
+      text: "Review this finding with the developer who created or maintains the code and request a project-specific correction.",
+      example: "No generic code example is available for this finding."
+    };
+    return { ...finding, recommendation: guidance.text, suggestedCode: guidance.example };
+  });
   return {
     format: "agentproof-diagnosis-v1",
     reportId: "AP-" + generatedAt.replace(/[-:.TZ]/g, "").slice(0, 14) + "-" + Math.random().toString(36).slice(2, 7).toUpperCase(),
@@ -79,7 +106,11 @@ function renderDiagnosis(findings) {
     recommendationTitle.textContent = "Suggested remediation for your developer";
     const recommendation = document.createElement("p");
     recommendation.textContent = finding.recommendation;
-    card.append(heading, location, evidence, recommendationTitle, recommendation);
+    const exampleTitle = document.createElement("strong");
+    exampleTitle.textContent = "Suggested code example (adapt to your project)";
+    const example = document.createElement("pre");
+    example.textContent = finding.suggestedCode;
+    card.append(heading, location, evidence, recommendationTitle, recommendation, exampleTitle, example);
     list.append(card);
   }
   $("#diagnosis").hidden = false;
@@ -100,7 +131,7 @@ function printDiagnosisCertificate() {
       <h3>${escapeHtml(finding.title)} — ${escapeHtml(finding.severity.toUpperCase())}</h3>
       <p><b>Location:</b> ${escapeHtml(finding.file)}:${finding.line} · ${escapeHtml(finding.ruleId)}</p>
       <pre>${escapeHtml(finding.evidence)}</pre>
-      <p><b>Suggested remediation for the developer:</b> ${escapeHtml(finding.recommendation)}</p>
+      <p><b>Suggested remediation for the developer:</b> ${escapeHtml(finding.recommendation)}</p><p><b>Suggested code example (adapt to your project):</b></p><pre>${escapeHtml(finding.suggestedCode)}</pre>
     </article>`).join("");
   const status = report.summary.total === 0
     ? "No findings detected within the configured heuristic checks"
