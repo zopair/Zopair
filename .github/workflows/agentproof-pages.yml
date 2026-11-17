@@ -27,7 +27,6 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/agentproof-site"
           cp -a agentproof/. "$RUNNER_TEMP/agentproof-site/"
-          convert "$RUNNER_TEMP/agentproof-site/cover.svg" "$RUNNER_TEMP/agentproof-site/cover.png"
           tar --dereference --hard-dereference --directory "$RUNNER_TEMP/agentproof-site" -cvf "$RUNNER_TEMP/artifact.tar" .
       - name: Upload Pages artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
