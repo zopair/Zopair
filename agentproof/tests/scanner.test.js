@@ -44,10 +44,12 @@ test("diagnosis CSV quotes content and neutralizes spreadsheet formulas", () => 
     file: '=HYPERLINK("https://example.com")',
     line: 12,
     evidence: "line 1\nline 2",
-    recommendation: "Use a safe renderer."
+    recommendation: "Use a safe renderer.",
+    suggestedCode: "element.textContent = input;"
   }]);
   assert.match(csv, /"Unsafe, ""HTML"""/);
   assert.ok(csv.includes(`"'=HYPERLINK(""https://example.com"")"`));
   assert.match(csv, /"line 1\nline 2"/);
   assert.ok(csv.includes("Use a safe renderer."));
+  assert.ok(csv.includes("element.textContent = input;"));
 });
