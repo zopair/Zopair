@@ -78,7 +78,7 @@ test("report email endpoint verifies the paid license and sends JSON and CSV att
           generatedAt: "2026-11-17T12:00:00.000Z",
           summary: { total: 1, high: 1, medium: 0, low: 0 },
           filesScanned: 3,
-          findings: [{ ruleId: "SEC-001", severity: "high", title: "Potential hard-coded secret", file: "app.js", line: 4, evidence: "[redacted: credential-like source line]", recommendation: "Rotate the credential." }]
+          findings: [{ ruleId: "SEC-001", severity: "high", title: "Potential hard-coded secret", file: "app.js", line: 4, evidence: "ghp_abcdefghijklmnopqrstuvwxyz123456", recommendation: "Rotate the credential." }]
         }
       })
     });
@@ -88,8 +88,12 @@ test("report email endpoint verifies the paid license and sends JSON and CSV att
     assert.equal(sentPayload.from, "AgentProof Reports <reports@example.com>");
     assert.equal(sentPayload.attachments.length, 2);
     assert.deepEqual(sentPayload.attachments.map(x => x.filename).sort(), ["agentproof-diagnosis.csv", "agentproof-diagnosis.json"]);
+    const json = Buffer.from(sentPayload.attachments.find(x => x.filename.endsWith(".json")).content, "base64").toString();
+    assert.match(json, /redacted: credential-like source line/);
+    assert.doesNotMatch(json, /ghp_abcdefghijklmnopqrstuvwxyz123456/);
     const csv = Buffer.from(sentPayload.attachments.find(x => x.filename.endsWith(".csv")).content, "base64").toString();
     assert.match(csv, /Rotate the credential/);
+    assert.doesNotMatch(csv, /ghp_abcdefghijklmnopqrstuvwxyz123456/);
   });
 });
 
