@@ -24,7 +24,8 @@ function readBody(req) {
 
 function normalizeEmailReport(input) {
   const email = typeof input?.email === "string" ? input.email.trim() : "";
-  if (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return null;
+  const licenseKey = typeof input?.licenseKey === "string" ? input.licenseKey.trim() : "";
+  if (email.length > 254 || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email) || licenseKey.length < 8 || licenseKey.length > 512) return null;
   const source = input?.report;
   if (!source || source.format !== "agentproof-diagnosis-v1" || !Array.isArray(source.findings) || source.findings.length > 2000) return null;
 
