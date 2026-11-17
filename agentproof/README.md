@@ -1,78 +1,70 @@
 # AgentProof
 
-**AI Agent Reliability & Safety Test Kit** — a local-first analyzer for AI agent execution traces.
+**Inspect. Diagnose. Report.**
 
-AgentProof inspects JSON or JSONL event logs for a focused set of operational and safety indicators. It runs entirely in the browser, requires no API key, sends no trace data to a server, and exports findings as JSON or CSV.
+AgentProof is a browser-local source-code diagnostic tool. It scans selected source files, summarizes findings for free, and unlocks detailed findings, developer remediation guidance, an inspection certificate and downloadable reports after Professional Diagnosis purchase verification.
 
-## Included
-- Browser-based execution trace analyzer
-- JSON array and JSONL parsing with line-aware errors
-- Six deterministic checks across security, reliability and policy handling
-- Evidence-linked findings with rule IDs, severity and event numbers
-- JSON and CSV report exports; starter test pack
-- Node.js built-in test suite with no runtime dependencies
-- GitHub Actions workflows for tests, Pages deployment and tagged ZIP releases
+AgentProof is diagnosis-only. It does not patch, repair, execute, overwrite or upload customer source files.
 
-## Quick start
-Open \`index.html\` in a modern browser, paste a JSON array or JSONL trace, then choose **Analyze execution**. You can load the demo or import a .json, .jsonl, .ndjson or .txt file.
+## Product workflow
 
-For development: \`npm test\` and \`npm run check\`. No npm install is required.
+1. **Free Scan:** scan up to 500 files / 20 MB total / 2 MB per file. The free result reveals only total, high, medium and low finding counts.
+2. **Professional Diagnosis ($29):** Gumroad license verification unlocks file and line locations, rule IDs, severity, evidence and suggested remediation guidance.
+3. **Inspection certificate:** print or save a PDF certificate containing report ID, issue date, file count, rule coverage and severity totals.
+4. **Report handoff:** download JSON or CSV, or request delivery to the customer's email. The report directs the customer to share it with the developer who created or maintains the code and request corrections.
 
-## Rule catalogue
-| Rule | Severity | Detection |
-|---|---|---|
-| AP-SEC-001 | High | Common bearer, GitHub, AWS, private-key and credential-assignment patterns |
-| AP-SEC-002 | High | Selected prompt-injection and instruction-override indicators |
-| AP-REL-001 | Medium | Error, failed, failure or timeout status |
-| AP-REL-002 | Medium | Three or more identical calls to the same tool and arguments |
-| AP-POL-001 | Low | Denied, blocked or rejected events |
-| AP-REL-003 | Low | Traces longer than 30 events |
+## Diagnosis coverage
 
-These checks are transparent and bounded. They are not a complete SAST, DLP, red-team or agent-evaluation framework. Detection depends on supplied event fields and patterns; false positives and false negatives are possible.
+The current heuristic scanner checks for:
+- Credential-like strings, common tokens and private-key markers.
+- Bearer authorization values.
+- Dynamic execution (eval, new Function).
+- Potential unsafe HTML assignment (innerHTML).
+- Potential shell command execution.
+- Disabled TLS certificate verification.
+- Potential SQL string concatenation.
+- Debug logging statements.
 
-## Supported event shape
-Common fields include type, event, tool, tool_name, input, arguments, output, content, message, status and state. Provider-specific adapters are not included in this edition; normalize provider logs into these fields first.
+Supported extensions include JS, JSX, MJS, CJS, TS, TSX, Python, PHP, Ruby, Go, Java, Kotlin, C#, C/C++, Rust, Swift, Vue, Svelte, HTML, CSS, JSON, YAML, shell and SQL.
 
-## Privacy and limitations
-Parsing and analysis happen in the browser tab. No analytics, telemetry, account, API key or external AI endpoint is used. Do not paste production secrets into a report workflow. Credential-like evidence is redacted in findings, but the original trace remains in the text area until cleared or the tab is closed. Exported reports may contain sensitive context.
+These are bounded pattern checks, not a full SAST, dependency audit, runtime test suite, penetration test or security guarantee. False positives and false negatives are possible. A zero-finding result means only that the configured checks did not match the selected files.
 
-A clean report means only that this ruleset did not detect its configured patterns. Human review and application-specific testing remain necessary. AgentProof is not a safety certification or guarantee.
+## Privacy
 
-## License
-MIT. See LICENSE.
+Scanning and diagnosis run in the browser. Source files are never sent to the API. Credential-like evidence is redacted. The license API receives only the Gumroad license key for verification.
 
-## Deployment
+When a customer explicitly requests email delivery, the report findings and recommendations (not source files) are sent to the configured email provider and delivered to the requested address. JSON and CSV are attached.
 
-The public preview is published through the repository's GitHub Pages workflow. The release ZIP is a source archive pinned to a specific commit so the delivered files are reproducible.
+## Development
 
+No runtime npm dependencies are required.
+
+    npm test
+    npm run check
 
 ## Paid diagnosis API
 
-The `api/` directory contains a dependency-free Node.js API for server-side Gumroad license verification. It never receives project source files or scan findings.
+The api/ directory contains a dependency-free Node.js API for Gumroad license verification and optional report email delivery.
 
 ### Runtime configuration
 
-- `PORT=8080`
-- `ALLOWED_ORIGIN=https://zopair.github.io`
-- `GUMROAD_DIAGNOSIS_PRODUCT_ID=<Gumroad product ID>`
+- PORT=8080
+- ALLOWED_ORIGIN=https://zopair.github.io
+- GUMROAD_DIAGNOSIS_PRODUCT_ID=<Gumroad product ID>
+- RESEND_API_KEY=<Resend API key>
+- REPORT_FROM_EMAIL=reports@your-verified-domain.example
 
 Run with Node.js 20+:
 
-```sh
-node api/index.js
-```
+    node api/index.js
 
-Health check: `GET /health`
+Endpoints:
+- GET /health — service and configuration status (never returns secrets).
+- POST /api/licenses/verify — verifies the Gumroad license without incrementing usage count.
+- POST /api/reports/email — sends the customer-requested diagnosis report through Resend.
 
-License verification: `POST /api/licenses/verify` with JSON `{"licenseKey":"..."}`.
+Email delivery requires a Resend account, a verified sender domain/address, and the two email environment variables above. If not configured, the UI clearly directs customers to the local JSON/CSV and PDF options. The API sends JSON and CSV attachments and does not persist report data or customer email addresses.
 
-The API calls Gumroad's official license verification endpoint, disables usage-count increments, verifies the exact product ID, and rejects refunded, partially refunded, chargebacked, lost-dispute, ended or failed subscriptions. The API returns only a boolean and generic reason; it does not return buyer email or purchase details and does not store license keys.
+## License
 
-### Gumroad setup still required
-
-1. Open the **AgentProof Professional Diagnosis** draft product in Gumroad.
-2. Add Gumroad's License Key block to the product content, then save the product. Gumroad's API requires the product ID (not the permalink) for license verification.
-3. Configure `GUMROAD_DIAGNOSIS_PRODUCT_ID` in the backend runtime environment using the ID shown in Gumroad's license-key block.
-4. Publish the diagnosis product only after the checkout, license-key receipt and API verification have been tested with a real test purchase.
-
-The $100 Owner-Approved Remediation product is a separate unpublished draft. Its secure source intake, approval tracking, isolated patch runner and post-repair verification are not part of this API release. Do not accept payment for automated repair until those controls are implemented.
+MIT. See LICENSE.

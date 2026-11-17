@@ -1,5 +1,4 @@
-import { scanSourceFiles, summarizePublicFindings, SCAN_RULE_COUNT } from "./scanner.js";
-import { buildRepairPlan, applyRepairPlan, createBackupManifest } from "./repair.js";
+import { scanSourceFiles, summarizePublicFindings, toDiagnosisCsv, SCAN_RULE_COUNT } from "./scanner.js";
 
 const API_BASE = "https://hlzptpre.basicdeploy.com";
 const $ = selector => document.querySelector(selector);
@@ -9,7 +8,7 @@ const licenseButton = $("#licenseButton");
 let selectedFiles = [];
 let activeSources = [];
 let latestFindings = [];
-let repairPlan = null;
+let reportSnapshot = null;
 let hasCompletedScan = false;
 let hasVerifiedDiagnosis = false;
 
@@ -35,56 +34,39 @@ function downloadText(filename, content, type = "application/json") {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
-function renderRepairPlan(plan) {
-  const summary = $("#repairSummary");
-  const manual = $("#manualRepairList");
-  const changes = $("#proposedRepairList");
-  summary.textContent = plan.summary.linesRemoved + " standalone debug statement(s) can be removed safely across " +
-    plan.summary.filesChanged + " file(s). " + plan.summary.manualReview + " finding(s) require manual engineering review.";
-  manual.replaceChildren();
-  changes.replaceChildren();
-  for (const change of plan.changes) {
-    const item = document.createElement("li");
-    const details = document.createElement("details");
-    const summaryLine = document.createElement("summary");
-    summaryLine.textContent = change.path + " — " + change.preview.length + " proposed removal(s)";
-    details.append(summaryLine);
-    for (const preview of change.preview) {
-      const entry = document.createElement("div");
-      entry.className = "repair-diff-entry";
-      const location = document.createElement("strong");
-      location.textContent = "Line " + preview.line;
-      const beforeLabel = document.createElement("p");
-      beforeLabel.textContent = "BEFORE";
-      const before = document.createElement("pre");
-      before.textContent = preview.before;
-      const afterLabel = document.createElement("p");
-      afterLabel.textContent = "AFTER";
-      const after = document.createElement("pre");
-      after.textContent = preview.after;
-      entry.append(location, beforeLabel, before, afterLabel, after);
-      details.append(entry);
-    }
-    item.append(details);
-    changes.append(item);
-  }
-  for (const finding of plan.manualFindings) {
-    const item = document.createElement("li");
-    item.textContent = finding.file + ":" + finding.line + " · " + finding.ruleId + " — " + finding.reason;
-    manual.append(item);
-  }
-  $("#repairApproval").hidden = plan.changes.length === 0;
-  $("#repairApprovalCheck").checked = false;
-  $("#approveRepairButton").disabled = true;
-  $("#repairResult").hidden = true;
-  $("#repairPlan").hidden = false;
-  $("#repairPlan").scrollIntoView({ behavior: "smooth", block: "start" });
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, character => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  })[character]);
+}
+
+function createReport() {
+  const generatedAt = new Date().toISOString();
+  const findings = latestFindings.map(finding => ({
+    ...finding,
+    recommendation: REMEDIATION[finding.ruleId] || "Review this finding with the developer who created or maintains the code and request a project-specific correction."
+  }));
+  return {
+    format: "agentproof-diagnosis-v1",
+    reportId: "AP-" + generatedAt.replace(/[-:.TZ]/g, "").slice(0, 14) + "-" + Math.random().toString(36).slice(2, 7).toUpperCase(),
+    generatedAt,
+    filesScanned: activeSources.length,
+    ruleCount: SCAN_RULE_COUNT,
+    summary: summarizePublicFindings(findings),
+    findings
+  };
+}
+
+function ensureReport() {
+  if (!reportSnapshot) reportSnapshot = createReport();
+  return reportSnapshot;
 }
 
 function renderDiagnosis(findings) {
+  const report = ensureReport();
   const list = $("#diagnosisList");
   list.replaceChildren();
-  for (const finding of findings) {
+  for (const finding of report.findings) {
     const card = document.createElement("article");
     card.className = "finding-card";
     const heading = document.createElement("h3");
@@ -93,27 +75,80 @@ function renderDiagnosis(findings) {
     location.textContent = finding.file + ":" + finding.line + " · " + finding.ruleId;
     const evidence = document.createElement("pre");
     evidence.textContent = finding.evidence;
+    const recommendationTitle = document.createElement("strong");
+    recommendationTitle.textContent = "Suggested remediation for your developer";
     const recommendation = document.createElement("p");
-    recommendation.textContent = REMEDIATION[finding.ruleId] || "Review this finding manually and apply a project-specific secure fix.";
-    card.append(heading, location, evidence, recommendation);
+    recommendation.textContent = finding.recommendation;
+    card.append(heading, location, evidence, recommendationTitle, recommendation);
     list.append(card);
   }
   $("#diagnosis").hidden = false;
-  $("#repairWorkflow").hidden = false;
+}
+
+function printDiagnosisCertificate() {
+  if (!hasVerifiedDiagnosis || !hasCompletedScan) return;
+  const report = ensureReport();
+  const printWindow = window.open("", "_blank");
+  if (!printWindow) {
+    $("#reportEmailStatus").textContent = "Allow pop-ups to print or save the certificate as PDF.";
+    $("#reportEmailStatus").hidden = false;
+    return;
+  }
+  printWindow.opener = null;
+  const rows = report.findings.map(finding => `
+    <article class="finding">
+      <h3>${escapeHtml(finding.title)} — ${escapeHtml(finding.severity.toUpperCase())}</h3>
+      <p><b>Location:</b> ${escapeHtml(finding.file)}:${finding.line} · ${escapeHtml(finding.ruleId)}</p>
+      <pre>${escapeHtml(finding.evidence)}</pre>
+      <p><b>Suggested remediation for the developer:</b> ${escapeHtml(finding.recommendation)}</p>
+    </article>`).join("");
+  const status = report.summary.total === 0
+    ? "No findings detected within the configured heuristic checks"
+    : report.summary.total + " finding(s) detected — developer review required";
+  printWindow.document.write(`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>AgentProof Diagnosis ${escapeHtml(report.reportId)}</title>
+    <style>
+      body{font:14px/1.6 Arial,sans-serif;color:#17212b;max-width:900px;margin:36px auto;padding:0 24px}
+      header{border-bottom:3px solid #176b62;padding-bottom:18px;margin-bottom:24px}
+      .brand{font-size:27px;font-weight:800;color:#123e43}.brand span{color:#178b78}
+      h1{font-size:25px;margin:18px 0 5px}.meta,.disclaimer{color:#526170;font-size:12px}
+      .certificate{border:2px solid #176b62;padding:20px;margin:20px 0;background:#f3faf8}
+      .counts{display:flex;gap:25px;flex-wrap:wrap;margin:12px 0}.counts b{font-size:20px}
+      .finding{border:1px solid #d6dee5;padding:14px;margin:12px 0;break-inside:avoid}
+      .finding h3{font-size:15px;margin:0 0 7px}.finding p{font-size:12px}
+      pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f5f7;padding:9px;font-size:11px}
+      footer{border-top:1px solid #ccd5dd;margin-top:25px;padding-top:12px;font-size:11px;color:#526170}
+      @media print{body{margin:15mm auto}.certificate,.finding{break-inside:avoid}}
+    </style></head><body>
+    <header><div class="brand">Agent<span>Proof</span></div><div>INSPECT · DIAGNOSE · REPORT</div></header>
+    <h1>Code Diagnostic Report & Inspection Certificate</h1>
+    <p class="meta">Report ID: ${escapeHtml(report.reportId)} · Issued: ${escapeHtml(new Date(report.generatedAt).toLocaleString())}</p>
+    <section class="certificate"><h2>Inspection result</h2><p><b>${escapeHtml(status)}</b></p>
+      <div class="counts"><span>Files scanned: <b>${report.filesScanned}</b></span><span>Total: <b>${report.summary.total}</b></span><span>High: <b>${report.summary.high}</b></span><span>Medium: <b>${report.summary.medium}</b></span><span>Low: <b>${report.summary.low}</b></span></div>
+      <p>Checks applied: ${report.ruleCount} configured heuristic rules.</p>
+    </section>
+    <h2>Findings and suggested remediation</h2>${rows || "<p>No findings were detected within the configured checks.</p>"}
+    <footer><b>Important:</b> This certificate confirms that the selected files were scanned by AgentProof's configured heuristic checks only. It is not a guarantee of security, compliance certification, or proof that the project is free of vulnerabilities. Give this report to the developer who created or maintains the code and request review and correction. Suggested fixes are guidance only; AgentProof does not modify source code.</footer>
+    </body></html>`);
+  printWindow.document.close();
+  setTimeout(() => printWindow.print(), 350);
+}
+
+function renderFreeSummary(summary) {
+  for (const key of ["total", "high", "medium", "low"]) $("#" + key).textContent = summary[key];
 }
 
 picker.addEventListener("change", () => {
   selectedFiles = Array.from(picker.files || []);
   activeSources = [];
   latestFindings = [];
+  reportSnapshot = null;
   hasCompletedScan = false;
   hasVerifiedDiagnosis = false;
   $("#diagnosis").hidden = true;
-  $("#repairWorkflow").hidden = true;
-  $("#repairPlan").hidden = true;
+  $("#reportEmailStatus").hidden = true;
   $("#fileMeta").textContent = selectedFiles.length
     ? selectedFiles.length + " file(s) selected · Content stays in this browser"
-    : "Supported source formats · JS, TS, Python, Java, Go, PHP, Ruby, SQL, HTML, CSS and more";
+    : "Supported source formats · JS, TS, Python, Java, Go, PHP, SQL, HTML, CSS and more";
   scanButton.disabled = selectedFiles.length === 0;
   $("#error").hidden = true;
 });
@@ -135,12 +170,12 @@ scanButton.addEventListener("click", async () => {
     }
     activeSources = sources;
     latestFindings = scanSourceFiles(activeSources);
+    reportSnapshot = null;
     hasVerifiedDiagnosis = false;
     hasCompletedScan = true;
     $("#diagnosis").hidden = true;
     $("#licenseError").hidden = true;
-    const summary = summarizePublicFindings(latestFindings);
-    for (const key of ["total", "high", "medium", "low"]) $("#" + key).textContent = summary[key];
+    renderFreeSummary(summarizePublicFindings(latestFindings));
     $("#ruleCount").textContent = SCAN_RULE_COUNT + " HEURISTIC CHECKS";
     $("#scanStatus").textContent = sources.length + " FILES SCANNED";
     $("#results").hidden = false;
@@ -192,49 +227,50 @@ licenseButton.addEventListener("click", async () => {
   }
 });
 
-
-$("#repairPlanButton").addEventListener("click", () => {
+$("#exportDiagnosisJson").addEventListener("click", () => {
   if (!hasVerifiedDiagnosis || !hasCompletedScan) return;
-  repairPlan = buildRepairPlan(activeSources, latestFindings);
-  renderRepairPlan(repairPlan);
+  const report = ensureReport();
+  downloadText("agentproof-diagnosis-" + report.reportId + ".json", JSON.stringify(report, null, 2));
 });
 
-$("#repairApprovalCheck").addEventListener("change", event => {
-  $("#approveRepairButton").disabled = !event.target.checked;
+$("#exportDiagnosisCsv").addEventListener("click", () => {
+  if (!hasVerifiedDiagnosis || !hasCompletedScan) return;
+  const report = ensureReport();
+  downloadText("agentproof-diagnosis-" + report.reportId + ".csv", toDiagnosisCsv(report.findings), "text/csv;charset=utf-8");
 });
 
-$("#approveRepairButton").addEventListener("click", () => {
-  if (!hasVerifiedDiagnosis || !repairPlan || !$("#repairApprovalCheck").checked) return;
-  const button = $("#approveRepairButton");
+$("#printCertificate").addEventListener("click", printDiagnosisCertificate);
+
+$("#sendReportEmail").addEventListener("click", async () => {
+  const status = $("#reportEmailStatus");
+  const email = $("#reportEmail").value.trim();
+  status.hidden = true;
+  if (!hasVerifiedDiagnosis || !hasCompletedScan) return;
+  if (!email) {
+    status.textContent = "Enter the email address where you want to receive the report.";
+    status.hidden = false;
+    return;
+  }
+  const button = $("#sendReportEmail");
   button.disabled = true;
-  button.textContent = "Creating backup and applying approved changes…";
+  button.textContent = "Sending report…";
   try {
-    const backup = createBackupManifest(activeSources);
-    downloadText("agentproof-backup-" + new Date().toISOString().replace(/[:.]/g, "-") + ".json", JSON.stringify(backup, null, 2));
-    const repairedSources = applyRepairPlan(repairPlan, activeSources);
-    for (const [index, change] of repairPlan.changes.entries()) {
-      const safeName = change.path.replace(/[\\/]+/g, "__").replace(/[^a-zA-Z0-9._-]/g, "_");
-      const output = repairedSources.find(file => file.name === change.path);
-      downloadText("agentproof-repaired-" + (index + 1) + "-" + safeName, output.content, "text/plain;charset=utf-8");
+    const response = await fetch(API_BASE + "/api/reports/email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, licenseKey: $("#licenseKey").value.trim(), report: ensureReport() })
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      if (result.error === "email_delivery_not_configured") throw new Error("Email delivery is being configured. Download the report or save the certificate as PDF for now.");
+      throw new Error("The report could not be sent. Check the email address and try again.");
     }
-    const verificationFindings = scanSourceFiles(repairedSources);
-    activeSources = repairedSources;
-    latestFindings = verificationFindings;
-    const summary = summarizePublicFindings(verificationFindings);
-    for (const key of ["total", "high", "medium", "low"]) $("#" + key).textContent = summary[key];
-    $("#scanStatus").textContent = "POST-REPAIR VERIFICATION";
-    renderDiagnosis(verificationFindings);
-    const result = $("#repairResult");
-    result.hidden = false;
-    result.className = summary.total === 0 ? "repair-result repair-result-success" : "repair-result";
-    result.textContent = summary.total === 0
-      ? "100% — No findings remain within the current heuristic scan scope. Backup and repaired file downloads were generated. Review the downloaded files before replacing project files."
-      : "Approved repair applied to " + repairPlan.summary.linesRemoved + " debug statement(s). " + summary.total + " finding(s) remain. Backup and changed files were downloaded; review and replace files manually.";
-    $("#repairApproval").hidden = true;
+    status.textContent = "Report sent to " + email + ". Check your inbox.";
   } catch (error) {
-    $("#repairResult").hidden = false;
-    $("#repairResult").textContent = "Repair was not completed: " + (error instanceof Error ? error.message : "unknown error");
+    status.textContent = error instanceof Error ? error.message : "Email delivery failed.";
   } finally {
-    button.textContent = "Download backup & apply approved repairs";
+    status.hidden = false;
+    button.disabled = false;
+    button.textContent = "Send report to my email";
   }
 });

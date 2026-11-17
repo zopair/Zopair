@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { scanSourceFiles, summarizePublicFindings } from "../src/scanner.js";
+import { scanSourceFiles, summarizePublicFindings, toDiagnosisCsv } from "../src/scanner.js";
 
 test("free summary exposes only severity counts and no finding metadata", () => {
   const findings = scanSourceFiles([{ name: "app.js", content: 'const token = "ghp_abcdefghijklmnopqrstuvwxyz123456";\neval(userInput);' }]);
@@ -34,4 +34,20 @@ test("paid diagnosis redacts credential-like source evidence", () => {
     assert.doesNotMatch(finding.evidence, /ghp_abcdefghijklmnopqrstuvwxyz123456|Bearer abcdefghijklmnopqrstuvwxyz123456/);
     assert.match(finding.evidence, /redacted/i);
   }
+});
+
+test("diagnosis CSV quotes content and neutralizes spreadsheet formulas", () => {
+  const csv = toDiagnosisCsv([{
+    ruleId: "CODE-002",
+    severity: "medium",
+    title: 'Unsafe, "HTML"',
+    file: '=HYPERLINK("https://example.com")',
+    line: 12,
+    evidence: "line 1\nline 2",
+    recommendation: "Use a safe renderer."
+  }]);
+  assert.match(csv, /"Unsafe, ""HTML"""/);
+  assert.ok(csv.includes(`"'=HYPERLINK(""https://example.com"")"`));
+  assert.match(csv, /"line 1\nline 2"/);
+  assert.ok(csv.includes("Use a safe renderer."));
 });
