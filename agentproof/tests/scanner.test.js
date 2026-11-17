@@ -41,7 +41,7 @@ test("diagnosis CSV quotes content and neutralizes spreadsheet formulas", () => 
     ruleId: "CODE-002",
     severity: "medium",
     title: 'Unsafe, "HTML"',
-    file: '=HYPERLINK("https://example.com")',
+  assert.ok(csv.includes(`"'=HYPERLINK(""https://example.com"")"`));
     line: 12,
     evidence: "line 1\nline 2"
   }]);
