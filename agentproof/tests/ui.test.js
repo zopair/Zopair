@@ -19,7 +19,7 @@ test("paid diagnosis provides certificate, report downloads and email delivery",
   }
   assert.match(app, /printDiagnosisCertificate/);
   assert.match(app, /\/api\/reports\/email/);
-  assert.match(docs, /developer who created the code|original developer/i);
+  assert.match(docs, /developer who created or maintains/i);
 });
 
 test("diagnosis recommendations are guidance only and do not alter source files", () => {
