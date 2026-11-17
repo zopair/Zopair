@@ -1,4 +1,4 @@
-import { scanSourceFiles, summarizePublicFindings, SCAN_RULE_COUNT } from "./scanner.js";
+import { scanSourceFiles, summarizePublicFindings, toDiagnosisCsv, SCAN_RULE_COUNT } from "./scanner.js";
 import { buildRepairPlan, applyRepairPlan, createBackupManifest } from "./repair.js";
 
 const API_BASE = "https://hlzptpre.basicdeploy.com";
@@ -192,6 +192,22 @@ licenseButton.addEventListener("click", async () => {
   }
 });
 
+
+$("#exportDiagnosisJson").addEventListener("click", () => {
+  if (!hasVerifiedDiagnosis || !hasCompletedScan) return;
+  const report = {
+    format: "agentproof-diagnosis-v1",
+    generatedAt: new Date().toISOString(),
+    summary: summarizePublicFindings(latestFindings),
+    findings: latestFindings
+  };
+  downloadText("agentproof-diagnosis.json", JSON.stringify(report, null, 2));
+});
+
+$("#exportDiagnosisCsv").addEventListener("click", () => {
+  if (!hasVerifiedDiagnosis || !hasCompletedScan) return;
+  downloadText("agentproof-diagnosis.csv", toDiagnosisCsv(latestFindings), "text/csv;charset=utf-8");
+});
 
 $("#repairPlanButton").addEventListener("click", () => {
   if (!hasVerifiedDiagnosis || !hasCompletedScan) return;
