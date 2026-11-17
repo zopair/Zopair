@@ -44,3 +44,35 @@ MIT. See LICENSE.
 ## Deployment
 
 The public preview is published through the repository's GitHub Pages workflow. The release ZIP is a source archive pinned to a specific commit so the delivered files are reproducible.
+
+
+## Paid diagnosis API
+
+The `api/` directory contains a dependency-free Node.js API for server-side Gumroad license verification. It never receives project source files or scan findings.
+
+### Runtime configuration
+
+- `PORT=8080`
+- `ALLOWED_ORIGIN=https://zopair.github.io`
+- `GUMROAD_DIAGNOSIS_PRODUCT_ID=<Gumroad product ID>`
+
+Run with Node.js 20+:
+
+```sh
+node api/index.js
+```
+
+Health check: `GET /health`
+
+License verification: `POST /api/licenses/verify` with JSON `{"licenseKey":"..."}`.
+
+The API calls Gumroad's official license verification endpoint, disables usage-count increments, verifies the exact product ID, and rejects refunded, partially refunded, chargebacked, lost-dispute, ended or failed subscriptions. The API returns only a boolean and generic reason; it does not return buyer email or purchase details and does not store license keys.
+
+### Gumroad setup still required
+
+1. Open the **AgentProof Professional Diagnosis** draft product in Gumroad.
+2. Add Gumroad's License Key block to the product content, then save the product. Gumroad's API requires the product ID (not the permalink) for license verification.
+3. Configure `GUMROAD_DIAGNOSIS_PRODUCT_ID` in the backend runtime environment using the ID shown in Gumroad's license-key block.
+4. Publish the diagnosis product only after the checkout, license-key receipt and API verification have been tested with a real test purchase.
+
+The $100 Owner-Approved Remediation product is a separate unpublished draft. Its secure source intake, approval tracking, isolated patch runner and post-repair verification are not part of this API release. Do not accept payment for automated repair until those controls are implemented.
