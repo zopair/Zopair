@@ -38,7 +38,8 @@ function normalizeEmailReport(input) {
       file: String(item?.file || "").slice(0, 500),
       line: Number.isInteger(item?.line) && item.line > 0 ? item.line : 0,
       evidence: sensitive ? "[redacted: credential-like source line]" : String(item?.evidence || "").slice(0, 500),
-      recommendation: String(item?.recommendation || "Review this finding with the developer who maintains the code.").slice(0, 1200)
+      recommendation: String(item?.recommendation || "Review this finding with the developer who maintains the code.").slice(0, 1200),
+      suggestedCode: String(item?.suggestedCode || "No generic code example is available for this finding.").slice(0, 2000)
     };
   });
   return {
