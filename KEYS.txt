@@ -1,0 +1,15 @@
+# KEYS.txt — Owner-only setup
+
+## Temporary deployment action
+
+No API key is required.
+
+**One-time owner action:** open the repository's [GitHub Pages settings](https://github.com/zopair/Zopair/settings/pages), then under **Build and deployment** choose **GitHub Actions** as the source and save.
+
+After saving, open [AgentProof Pages workflow](https://github.com/zopair/Zopair/actions/workflows/agentproof-pages.yml) and run it once if the deployment does not start automatically.
+
+This permission change is required because the GitHub connector can write repository files but cannot create the repository's Pages site. It is not required by product buyers.
+
+## Product secrets
+
+None. AgentProof does not use external API keys, analytics, telemetry or third-party AI services.
