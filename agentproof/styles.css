@@ -21,3 +21,5 @@
 #approveRepairButton:disabled{opacity:.45;cursor:not-allowed}
 .repair-result{padding:13px;border:1px solid #725b35;border-radius:7px;background:#211b10}
 .repair-result-success{border-color:#28664f;background:#0b2a20;color:#8be3b6!important;font-weight:700}
+
+.diagnosis-actions{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px}.diagnosis-actions button{border:1px solid #31566a;background:#0c2030;color:#bfe0e8;padding:10px 14px}.diagnosis-actions button:hover{border-color:var(--mint);color:var(--mint)}
