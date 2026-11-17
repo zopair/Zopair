@@ -55,4 +55,17 @@ export function summarizePublicFindings(findings) {
   }, { total: 0, high: 0, medium: 0, low: 0 });
 }
 
+export function toDiagnosisCsv(findings) {
+  const columns = ["ruleId", "severity", "title", "file", "line", "evidence"];
+  const escapeCell = value => {
+    let text = String(value ?? "");
+    if (/^\s*[=+\-@]/.test(text)) text = "'" + text;
+    return /[",\r\n]/.test(text) ? '"' + text.replaceAll('"', '""') + '"' : text;
+  };
+  return [
+    columns.join(","),
+    ...findings.map(finding => columns.map(column => escapeCell(finding[column])).join(","))
+  ].join("\r\n");
+}
+
 export const SCAN_RULE_COUNT = RULES.length;
