@@ -25,7 +25,9 @@ export async function verifyGumroadLicense({ licenseKey, productId, fetchImpl = 
 
   const purchase = payload.purchase;
   const correctProduct = purchase.product_id === productId;
-  const lostDispute = Boolean(purchase.disputed && !purchase.dispute_won);\n  const endedSubscription = Boolean(purchase.subscription_ended_at || purchase.subscription_cancelled_at || purchase.subscription_failed_at);\n  const revoked = Boolean(purchase.refunded || purchase.partially_refunded || purchase.chargebacked || lostDispute || endedSubscription);
+  const lostDispute = Boolean(purchase.disputed && !purchase.dispute_won);
+  const endedSubscription = Boolean(purchase.subscription_ended_at || purchase.subscription_cancelled_at || purchase.subscription_failed_at);
+  const revoked = Boolean(purchase.refunded || purchase.partially_refunded || purchase.chargebacked || lostDispute || endedSubscription);
   if (!correctProduct || revoked) return { valid: false, reason: revoked ? "revoked" : "wrong_product" };
 
   return {
