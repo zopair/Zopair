@@ -1,1 +1,14 @@
-{"name":"agentproof","version":"1.0.0","private":true,"type":"module","description":"Local-first reliability and safety checks for AI agent execution logs","scripts":{"test":"node --test","check":"node --check src/core.js && node --check src/app.js"},"engines":{"node":">=20"}}
+{
+  "name": "agentproof",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser-local source code risk scan with severity-only free results",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/core.js && node --check src/scanner.js && node --check src/app.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
