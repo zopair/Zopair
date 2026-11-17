@@ -82,9 +82,3 @@ export function createApp({ env = process.env, fetchImpl = fetch, now = Date.now
   });
 }
 
-if (process.env.NODE_ENV !== "test") {
-  const port = Number(process.env.PORT || 8080);
-  createApp().listen(port, "0.0.0.0", () => {
-    console.log("AgentProof API listening on " + port);
-  });
-}
