@@ -42,6 +42,7 @@ function normalizeEmailReport(input) {
   });
   return {
     email,
+    licenseKey,
     report: {
       format: "agentproof-diagnosis-v1",
       generatedAt: new Date().toISOString(),
@@ -159,6 +160,15 @@ export function createApp({ env = process.env, fetchImpl = fetch, now = Date.now
         const normalized = normalizeEmailReport(input);
         if (!normalized) {
           res.writeHead(400, { "Content-Type": "application/json" }).end(JSON.stringify({ error: "invalid_report_request" }));
+          return;
+        }
+        const license = await verifyGumroadLicense({
+          licenseKey: normalized.licenseKey,
+          productId: env.GUMROAD_DIAGNOSIS_PRODUCT_ID || env.GUMROAD_PRODUCT_ID,
+          fetchImpl
+        });
+        if (!license.valid) {
+          res.writeHead(403, { "Content-Type": "application/json" }).end(JSON.stringify({ error: "license_not_valid" }));
           return;
         }
         await sendDiagnosisEmail({ ...normalized, env, fetchImpl });
