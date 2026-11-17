@@ -258,7 +258,7 @@ $("#sendReportEmail").addEventListener("click", async () => {
     const response = await fetch(API_BASE + "/api/reports/email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, report: ensureReport() })
+      body: JSON.stringify({ email, licenseKey: $("#licenseKey").value.trim(), report: ensureReport() })
     });
     const result = await response.json();
     if (!response.ok) {
