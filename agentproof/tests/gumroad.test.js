@@ -28,6 +28,9 @@ test("license verification accepts only a successful non-refunded Gumroad purcha
 test("license verification rejects refunded, chargebacked and mismatched purchases", async () => {
   for (const purchase of [
     { refunded: true, product_id: "product-123" },
+    { partially_refunded: true, product_id: "product-123" },
+    { disputed: true, dispute_won: false, product_id: "product-123" },
+    { subscription_ended_at: "2026-01-01", product_id: "product-123" },
     { chargebacked: true, product_id: "product-123" },
     { refunded: false, product_id: "another-product" }
   ]) {
@@ -38,6 +41,14 @@ test("license verification rejects refunded, chargebacked and mismatched purchas
     });
     assert.equal(result.valid, false);
   }
+});
+
+test("license verification allows a dispute that the seller won", async () => {
+  const result = await verifyGumroadLicense({
+    licenseKey: "valid-key", productId: "product-123",
+    fetchImpl: async () => new Response(JSON.stringify({ success: true, purchase: { product_id: "product-123", disputed: true, dispute_won: true } }), { status: 200 })
+  });
+  assert.equal(result.valid, true);
 });
 
 test("license verification rejects malformed provider responses", async () => {
