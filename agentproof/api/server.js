@@ -55,7 +55,7 @@ export function createApp({ env = process.env, fetchImpl = fetch, now = Date.now
 
     if (req.method === "GET" && req.url === "/health") {
       res.writeHead(200, { "Content-Type": "application/json" })
-        .end(JSON.stringify({ ok: true, service: "agentproof-api", licenseVerificationConfigured: Boolean(env.GUMROAD_PRODUCT_ID) }));
+        .end(JSON.stringify({ ok: true, service: "agentproof-api", licenseVerificationConfigured: Boolean(env.GUMROAD_DIAGNOSIS_PRODUCT_ID || env.GUMROAD_PRODUCT_ID) }));
       return;
     }
 
@@ -65,7 +65,7 @@ export function createApp({ env = process.env, fetchImpl = fetch, now = Date.now
         const input = JSON.parse(raw || "{}");
         const result = await verifyGumroadLicense({
           licenseKey: input.licenseKey,
-          productId: env.GUMROAD_PRODUCT_ID,
+          productId: env.GUMROAD_DIAGNOSIS_PRODUCT_ID || env.GUMROAD_PRODUCT_ID,
           fetchImpl
         });
         res.writeHead(200, { "Content-Type": "application/json" })
