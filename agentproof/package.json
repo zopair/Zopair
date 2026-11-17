@@ -6,7 +6,7 @@
   "description": "Browser-local source code risk scan with severity-only free results",
   "scripts": {
     "test": "node --test",
-    "check": "node --check src/core.js && node --check src/scanner.js && node --check src/app.js && node --check api/gumroad.js && node --check api/server.js"
+    "check": "node --check src/core.js && node --check src/scanner.js && node --check src/app.js && node --check api/gumroad.js && node --check api/server.js && node --check tests/gumroad.test.js && node --check tests/api.test.js"
   },
   "engines": {
     "node": ">=20"
