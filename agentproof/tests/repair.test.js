@@ -14,6 +14,10 @@ test("repair plan only removes standalone console log/debug statements", () => {
   assert.equal(plan.changes[0].removedLines.length, 2);
   assert.equal(plan.manualFindings.length, 1);
   assert.equal(plan.changes[0].repairedContent, "const value = 1;\nnode.innerHTML = value;\n");
+  assert.deepEqual(plan.changes[0].preview, [
+    { line: 2, before: "  console.log(value);", after: "Line removed" },
+    { line: 3, before: 'console.debug("trace");', after: "Line removed" }
+  ]);
 });
 
 test("repair plan leaves inline, conditional and multiline console calls untouched", () => {
