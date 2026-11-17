@@ -40,3 +40,7 @@ A clean report means only that this ruleset did not detect its configured patter
 
 ## License
 MIT. See LICENSE.
+
+## Deployment
+
+The public preview is published through the repository's GitHub Pages workflow. The release ZIP is a source archive pinned to a specific commit so the delivered files are reproducible.
