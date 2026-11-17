@@ -11,3 +11,13 @@
 
 /* Paid diagnosis unlock and private findings */
 .license-unlock{margin-top:18px;display:grid;gap:8px;max-width:460px}.license-unlock label{font-size:10px;color:#a9bdcc}.license-unlock input{width:100%;padding:11px 12px;border:1px solid #345064;border-radius:6px;background:#071523;color:#eaf3fa;font:12px var(--mono)}.license-unlock button{padding:11px 14px;border:0;border-radius:6px;background:#f2bd70;color:#1b1a17;font-weight:700;font-size:11px;cursor:pointer}.license-unlock button:disabled{opacity:.6;cursor:wait}#licenseError{margin:0;color:#ff9d91;font-size:11px}.diagnosis-panel{margin-top:18px;padding:22px;border:1px solid #28664f;border-radius:10px;background:#0a1d20}.finding-card{margin:12px 0;padding:15px;border:1px solid #294758;border-radius:8px;background:#0c1b29}.finding-card h3{font-size:13px;margin:0 0 8px;color:#f0c27b}.finding-card p{font-size:11px;line-height:1.7;color:#b5c5d2;overflow-wrap:anywhere}.finding-card pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#06111c;padding:10px;border-radius:5px;color:#e5a49b;font-size:10px}
+
+.repair-workflow{margin-top:18px;padding:20px;border:1px solid #3b6659;border-radius:10px;background:#0a1d20}
+.repair-workflow h2{font-size:20px;margin:5px 0}.repair-workflow h3{font-size:12px;color:#b8cbd7;margin:18px 0 6px}
+.repair-workflow p,.repair-workflow li{font-size:11px;color:#9fb4c3;line-height:1.8;overflow-wrap:anywhere}
+.repair-workflow ul{padding-left:20px}.approval-check{display:flex;gap:10px;align-items:flex-start;margin:18px 0;color:#dce9f0;font-size:11px;line-height:1.7}
+.approval-check input{margin-top:4px;accent-color:#65e5c2}
+#approveRepairButton{padding:12px 16px;border:0;background:var(--mint);color:#08201f;font-weight:700}
+#approveRepairButton:disabled{opacity:.45;cursor:not-allowed}
+.repair-result{padding:13px;border:1px solid #725b35;border-radius:7px;background:#211b10}
+.repair-result-success{border-color:#28664f;background:#0b2a20;color:#8be3b6!important;font-weight:700}
