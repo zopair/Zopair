@@ -12,8 +12,8 @@ jobs:
       - name: Build downloadable ZIP
         run: |
           cd agentproof
-          zip -r "../AgentProof-\${{ github.ref_name }}.zip" . -x 'node_modules/*'
+          zip -r "../AgentProof-$GITHUB_REF_NAME.zip" . -x 'node_modules/*'
       - name: Publish release asset
         env:
-          GH_TOKEN: \${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
         run: gh release create "$GITHUB_REF_NAME" "AgentProof-$GITHUB_REF_NAME.zip" --title "AgentProof $GITHUB_REF_NAME" --notes "Local-first AI agent reliability and safety test kit. See README.md inside the archive for scope and limitations."
