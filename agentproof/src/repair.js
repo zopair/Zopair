@@ -25,17 +25,17 @@ export function buildRepairPlan(files, findings) {
   const changes = [];
   for (const [path, lineIndexes] of targets) {
     const original = byPath.get(path).content;
-    const newline = original.includes("\r\n") ? "\r\n" : "\n";
-    const lines = original.split(/\r?\n/);
+    const chunks = original.match(/[^\n]*\n|[^\n]+$/g) || [];
     const removedLines = [];
-    for (const index of [...lineIndexes].sort((a, b) => a - b)) {
-      removedLines.push({ line: index + 1, content: lines[index] });
-      lines[index] = "";
-    }
+    const repairedChunks = chunks.filter((chunk, index) => {
+      if (!lineIndexes.has(index)) return true;
+      removedLines.push({ line: index + 1, content: chunk.replace(/\r?\n$/, "") });
+      return false;
+    });
     changes.push({
       path,
       originalContent: original,
-      repairedContent: lines.join(newline),
+      repairedContent: repairedChunks.join(""),
       removedLines
     });
   }
