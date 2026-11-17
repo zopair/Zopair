@@ -52,11 +52,16 @@ test("license endpoint rejects cross-origin browser requests without granting CO
   });
 });
 
-test("report email endpoint sends requested diagnosis attachments through Resend", async () => {
+test("report email endpoint verifies the paid license and sends JSON and CSV attachments", async () => {
   let sentPayload;
   await withServer({
-    env: { RESEND_API_KEY: "test-resend-key", REPORT_FROM_EMAIL: "reports@example.com" },
+    env: { GUMROAD_PRODUCT_ID: "product-1", RESEND_API_KEY: "test-resend-key", REPORT_FROM_EMAIL: "reports@example.com" },
     fetchImpl: async (url, options) => {
+      if (url === "https://api.gumroad.com/v2/licenses/verify") {
+        const body = new URLSearchParams(options.body);
+        assert.equal(body.get("license_key"), "valid-license-key");
+        return new Response(JSON.stringify({ success: true, purchase: { product_id: "product-1", refunded: false } }), { status: 200 });
+      }
       assert.equal(url, "https://api.resend.com/emails");
       assert.equal(options.headers.Authorization, "Bearer test-resend-key");
       sentPayload = JSON.parse(options.body);
@@ -67,6 +72,7 @@ test("report email endpoint sends requested diagnosis attachments through Resend
       method: "POST", headers: { "content-type": "application/json" },
       body: JSON.stringify({
         email: "customer@example.com",
+        licenseKey: "valid-license-key",
         report: {
           format: "agentproof-diagnosis-v1",
           generatedAt: "2026-11-17T12:00:00.000Z",
@@ -82,23 +88,42 @@ test("report email endpoint sends requested diagnosis attachments through Resend
     assert.equal(sentPayload.from, "AgentProof Reports <reports@example.com>");
     assert.equal(sentPayload.attachments.length, 2);
     assert.deepEqual(sentPayload.attachments.map(x => x.filename).sort(), ["agentproof-diagnosis.csv", "agentproof-diagnosis.json"]);
+    const csv = Buffer.from(sentPayload.attachments.find(x => x.filename.endsWith(".csv")).content, "base64").toString();
+    assert.match(csv, /Rotate the credential/);
   });
 });
 
-test("report email endpoint validates customer email and requires mail configuration", async () => {
-  await withServer({ env: {} }, async base => {
+test("report email endpoint validates the customer email and requires mail configuration", async () => {
+  await withServer({
+    env: { GUMROAD_PRODUCT_ID: "product-1" },
+    fetchImpl: async () => new Response(JSON.stringify({ success: true, purchase: { product_id: "product-1", refunded: false } }), { status: 200 })
+  }, async base => {
     const missing = await fetch(base + "/api/reports/email", {
       method: "POST", headers: { "content-type": "application/json" },
-      body: JSON.stringify({ email: "customer@example.com", report: { format: "agentproof-diagnosis-v1", findings: [] } })
+      body: JSON.stringify({ email: "customer@example.com", licenseKey: "valid-license-key", report: { format: "agentproof-diagnosis-v1", findings: [] } })
     });
     assert.equal(missing.status, 503);
     assert.deepEqual(await missing.json(), { error: "email_delivery_not_configured" });
 
     const invalid = await fetch(base + "/api/reports/email", {
       method: "POST", headers: { "content-type": "application/json" },
-      body: JSON.stringify({ email: "not-an-email", report: { format: "agentproof-diagnosis-v1", findings: [] } })
+      body: JSON.stringify({ email: "not-an-email", licenseKey: "valid-license-key", report: { format: "agentproof-diagnosis-v1", findings: [] } })
     });
     assert.equal(invalid.status, 400);
     assert.deepEqual(await invalid.json(), { error: "invalid_report_request" });
+  });
+});
+
+test("report email endpoint refuses delivery for an invalid Gumroad purchase", async () => {
+  await withServer({
+    env: { GUMROAD_PRODUCT_ID: "product-1", RESEND_API_KEY: "test-resend-key", REPORT_FROM_EMAIL: "reports@example.com" },
+    fetchImpl: async () => new Response(JSON.stringify({ success: false }), { status: 200 })
+  }, async base => {
+    const response = await fetch(base + "/api/reports/email", {
+      method: "POST", headers: { "content-type": "application/json" },
+      body: JSON.stringify({ email: "customer@example.com", licenseKey: "invalid-license-key", report: { format: "agentproof-diagnosis-v1", findings: [] } })
+    });
+    assert.equal(response.status, 403);
+    assert.deepEqual(await response.json(), { error: "license_not_valid" });
   });
 });
