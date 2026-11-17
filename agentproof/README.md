@@ -2,7 +2,7 @@
 
 **Inspect. Diagnose. Report.**
 
-AgentProof is a browser-local source-code diagnostic tool. It scans selected source files, summarizes findings for free, and unlocks detailed findings, developer remediation guidance, an inspection certificate and downloadable reports after Professional Diagnosis purchase verification.
+AgentProof is a browser-local source-code diagnostic tool. It scans selected source files, summarizes findings for free, and unlocks detailed findings, developer remediation guidance and illustrative code examples, an inspection certificate and downloadable reports after Professional Diagnosis purchase verification.
 
 AgentProof is diagnosis-only. It does not patch, repair, execute, overwrite or upload customer source files.
 
