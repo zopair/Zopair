@@ -47,7 +47,9 @@ function normalizeEmailReport(input) {
     licenseKey,
     report: {
       format: "agentproof-diagnosis-v1",
-      generatedAt: new Date().toISOString(),
+      reportId: typeof source.reportId === "string" ? source.reportId.slice(0, 80) : "AP-UNSPECIFIED",
+      generatedAt: Number.isFinite(Date.parse(source.generatedAt)) ? new Date(source.generatedAt).toISOString() : new Date().toISOString(),
+      ruleCount: Number.isInteger(source.ruleCount) && source.ruleCount >= 0 ? source.ruleCount : 0,
       filesScanned: Number.isInteger(source.filesScanned) && source.filesScanned >= 0 ? source.filesScanned : 0,
       summary: summarizePublicFindings(findings),
       findings
@@ -66,7 +68,10 @@ async function sendDiagnosisEmail({ email, report, env, fetchImpl }) {
   const text = [
     "Your AgentProof Professional Diagnosis report is attached.",
     "",
+    "Report ID: " + report.reportId,
+    "Issued: " + report.generatedAt,
     "Files scanned: " + report.filesScanned,
+    "Configured checks: " + report.ruleCount,
     "Findings: " + summary.total + " (High: " + summary.high + ", Medium: " + summary.medium + ", Low: " + summary.low + ")",
     "",
     "Next step: Share this report with the developer who created or maintains your code and request review and remediation.",
