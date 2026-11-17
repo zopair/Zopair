@@ -59,7 +59,7 @@ The `api/` directory contains a dependency-free Node.js API for server-side Gumr
 Run with Node.js 20+:
 
 ```sh
-node api/server.js
+node api/index.js
 ```
 
 Health check: `GET /health`
