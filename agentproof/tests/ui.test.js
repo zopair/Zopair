@@ -24,5 +24,7 @@ test("paid diagnosis provides certificate, report downloads and email delivery",
 
 test("diagnosis recommendations are guidance only and do not alter source files", () => {
   assert.match(app, /REMEDIATION/);
+  assert.match(app, /suggestedCode/);
+  assert.match(app, /Suggested code example/);
   assert.doesNotMatch(app, /activeSources\s*=\s*repaired|downloadText\([^\n]*repaired/i);
 });
