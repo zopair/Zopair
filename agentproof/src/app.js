@@ -43,9 +43,29 @@ function renderRepairPlan(plan) {
     plan.summary.filesChanged + " file(s). " + plan.summary.manualReview + " finding(s) require manual engineering review.";
   manual.replaceChildren();
   changes.replaceChildren();
-  for (const change of plan.changes) for (const removed of change.removedLines) {
+  for (const change of plan.changes) {
     const item = document.createElement("li");
-    item.textContent = change.path + ":" + removed.line + " — " + removed.content.trim();
+    const details = document.createElement("details");
+    const summaryLine = document.createElement("summary");
+    summaryLine.textContent = change.path + " — " + change.preview.length + " proposed removal(s)";
+    details.append(summaryLine);
+    for (const preview of change.preview) {
+      const entry = document.createElement("div");
+      entry.className = "repair-diff-entry";
+      const location = document.createElement("strong");
+      location.textContent = "Line " + preview.line;
+      const beforeLabel = document.createElement("p");
+      beforeLabel.textContent = "BEFORE";
+      const before = document.createElement("pre");
+      before.textContent = preview.before;
+      const afterLabel = document.createElement("p");
+      afterLabel.textContent = "AFTER";
+      const after = document.createElement("pre");
+      after.textContent = preview.after;
+      entry.append(location, beforeLabel, before, afterLabel, after);
+      details.append(entry);
+    }
+    item.append(details);
     changes.append(item);
   }
   for (const finding of plan.manualFindings) {

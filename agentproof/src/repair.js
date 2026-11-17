@@ -36,7 +36,8 @@ export function buildRepairPlan(files, findings) {
       path,
       originalContent: original,
       repairedContent: repairedChunks.join(""),
-      removedLines
+      removedLines,
+      preview: removedLines.map(({ line, content }) => ({ line, before: content, after: "Line removed" }))
     });
   }
 
