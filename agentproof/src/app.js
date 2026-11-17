@@ -99,6 +99,7 @@ function renderDiagnosis(findings) {
     list.append(card);
   }
   $("#diagnosis").hidden = false;
+  $("#repairWorkflow").hidden = false;
 }
 
 picker.addEventListener("change", () => {
@@ -108,6 +109,7 @@ picker.addEventListener("change", () => {
   hasCompletedScan = false;
   hasVerifiedDiagnosis = false;
   $("#diagnosis").hidden = true;
+  $("#repairWorkflow").hidden = true;
   $("#repairPlan").hidden = true;
   $("#fileMeta").textContent = selectedFiles.length
     ? selectedFiles.length + " file(s) selected · Content stays in this browser"
