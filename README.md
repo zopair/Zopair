@@ -1,84 +1,42 @@
-<!-- Profile README for github.com/zopair -->
+# AgentProof
 
-<div align="center">
+**AI Agent Reliability & Safety Test Kit** — a local-first analyzer for AI agent execution traces.
 
-# Aly | Zubair
+AgentProof inspects JSON or JSONL event logs for a focused set of operational and safety indicators. It runs entirely in the browser, requires no API key, sends no trace data to a server, and exports findings as JSON or CSV.
 
-### Building intelligent systems, engineering platforms, and practical AI products.
+## Included
+- Browser-based execution trace analyzer
+- JSON array and JSONL parsing with line-aware errors
+- Six deterministic checks across security, reliability and policy handling
+- Evidence-linked findings with rule IDs, severity and event numbers
+- JSON and CSV report exports; starter test pack
+- Node.js built-in test suite with no runtime dependencies
+- GitHub Actions workflows for tests, Pages deployment and tagged ZIP releases
 
-**Owner — Zubair Investment** · Mathematics (M.Sc.) · Doctoral Research
+## Quick start
+Open \`index.html\` in a modern browser, paste a JSON array or JSONL trace, then choose **Analyze execution**. You can load the demo or import a .json, .jsonl, .ndjson or .txt file.
 
-[GitHub](https://github.com/zopair) · [Repositories](https://github.com/zopair?tab=repositories)
+For development: \`npm test\` and \`npm run check\`. No npm install is required.
 
-</div>
+## Rule catalogue
+| Rule | Severity | Detection |
+|---|---|---|
+| AP-SEC-001 | High | Common bearer, GitHub, AWS, private-key and credential-assignment patterns |
+| AP-SEC-002 | High | Selected prompt-injection and instruction-override indicators |
+| AP-REL-001 | Medium | Error, failed, failure or timeout status |
+| AP-REL-002 | Medium | Three or more identical calls to the same tool and arguments |
+| AP-POL-001 | Low | Denied, blocked or rejected events |
+| AP-REL-003 | Low | Traces longer than 30 events |
 
----
+These checks are transparent and bounded. They are not a complete SAST, DLP, red-team or agent-evaluation framework. Detection depends on supplied event fields and patterns; false positives and false negatives are possible.
 
-## Project Portfolio — 14 Live Interfaces
+## Supported event shape
+Common fields include type, event, tool, tool_name, input, arguments, output, content, message, status and state. Provider-specific adapters are not included in this edition; normalize provider logs into these fields first.
 
-| Project | Repository | Live interface |
-| --- | --- | --- |
-| Zubair Engineering Lab | [Repository](https://github.com/zopair/Zubair-Engineering-Lab) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/engineering-lab/) |
-| CLT Platform | [Repository](https://github.com/zopair/CLT-Platform) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-platform/) |
-| Sovereign AI Arsenal | [Repository](https://github.com/zopair/Sovereign-AI-Arsenal) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/sovereign-ai-arsenal/) |
-| Zubair AI Army | [Repository](https://github.com/zopair/Zubair_AI_Army) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/zubair-ai-army/) |
-| Zubair Hunter AI | [Repository](https://github.com/zopair/Zubair-Hunter-AI) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/zubair-hunter-ai/) |
-| InWork | [Repository](https://github.com/zopair/inwork) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/inwork/) |
-| NexaPay | [Repository](https://github.com/zopair/NexaPay-Nexa-Next-Generation-Pay) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/nexapay/) |
-| Security Matrix | [Repository](https://github.com/zopair/security_matrix) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/security-matrix/) |
-| SINC-OS | [Repository](https://github.com/zopair/SINC-OS) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/sinc-os/) |
-| CLT Core Monorepo | [Repository](https://github.com/zopair/CLT-Core-Monorepo) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-core/) |
-| CLT ALY | [Repository](https://github.com/zopair/-CLT_ALY) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-aly/) |
-| Amazon Work — The Happy Little Train | [Repository](https://github.com/zopair/Amazon-work-) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/amazon-work/) |
-| CarExit | [Repository](https://github.com/zopair/-CarExit-Platform) | [Open](https://zopair.github.io/-CarExit-Platform/) |
-| EasyHub | [Repository](https://github.com/zopair/EasyHub-) | [Open](https://zopair.github.io/EasyHub-/) |
+## Privacy and limitations
+Parsing and analysis happen in the browser tab. No analytics, telemetry, account, API key or external AI endpoint is used. Do not paste production secrets into a report workflow. Credential-like evidence is redacted in findings, but the original trace remains in the text area until cleared or the tab is closed. Exported reports may contain sensitive context.
 
-**Live project interfaces — verified 12 Nov 2026:**
+A clean report means only that this ruleset did not detect its configured patterns. Human review and application-specific testing remain necessary. AgentProof is not a safety certification or guarantee.
 
-- [Zubair Engineering Lab — Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/)
-- [InWork — Beta](https://zopair.github.io/inwork/)
-- [NexaPay](https://zopair.github.io/NexaPay-Nexa-Next-Generation-Pay/)
-- [Riwaq — رِواق](https://zopair.github.io/Zubair_AI_Army/)
-- [Rakez — Performance Dashboard](https://zopair.github.io/Zubair_AI_Army/rakez/)
-- [SecurityMatrix — SOC](https://zopair.github.io/security_matrix/)
-- [OpenConnect](https://zopair.github.io/CLT-Core-Monorepo/)
-- [CarExit — سوق التخارج من عقود السيارات](https://zopair.github.io/-CarExit-Platform/)
-- [EasyHub — Intent, resolved](https://zopair.github.io/EasyHub-/)
-
-## About
-
-I work at the intersection of applied mathematics, software architecture, artificial intelligence, and platform engineering.
-
-My focus is turning complex technical ideas into well-structured, maintainable systems — from AI agent architectures and automation platforms to developer infrastructure and product engineering.
-
-- **Leadership:** Owner at Zubair Investment.
-- **Academic background:** Master's degree in Mathematics; currently pursuing doctoral studies.
-- **Languages:** Arabic and English.
-- **Engineering interests:** AI systems and agentic workflows, software architecture, backend platforms, developer tooling, automation, and open-source technologies.
-
-## Engineering Principles
-
-- Architecture before accumulation of features.
-- Clear boundaries, modularity, and maintainability.
-- Evidence-based technical decisions and measurable outcomes.
-- Security, reliability, and responsible use of AI.
-- Preference for open standards and open-source components where practical.
-
-## بالعربية
-
-أعمل على تطوير الأنظمة الذكية والمنصات البرمجية، مع اهتمام خاص بالجمع بين الرياضيات التطبيقية، وهندسة البرمجيات، والذكاء الاصطناعي.
-
-أركز على تحويل الأفكار التقنية المعقدة إلى منتجات وأنظمة عملية قابلة للصيانة والتوسع، بما يشمل معمارية وكلاء الذكاء الاصطناعي، وأدوات الأتمتة، والبنية التحتية البرمجية، وهندسة المنصات.
-
-- **الصفة:** مالك شركة الزبير للاستثمار.
-- **المؤهل الأكاديمي:** ماجستير في الرياضيات، وأتابع حاليًا دراسات الدكتوراه.
-- **اللغات:** العربية والإنجليزية.
-- **مجالات الاهتمام والعمل:** الأنظمة الذكية، ووكلاء الذكاء الاصطناعي، ومعمارية البرمجيات، وهندسة المنصات، والأتمتة، وأدوات المطورين، والتقنيات مفتوحة المصدر.
-
----
-
-<div align="center">
-
-**Design with rigor. Build with purpose. Improve continuously.**
-
-</div>
+## License
+MIT. See LICENSE.
