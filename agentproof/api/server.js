@@ -2,7 +2,7 @@ import http from "node:http";
 import { verifyGumroadLicense } from "./gumroad.js";
 import { summarizePublicFindings, toDiagnosisCsv } from "../src/scanner.js";
 
-const MAX_BODY_BYTES = 256 * 1024;
+const MAX_BODY_BYTES = 2 * 1024 * 1024;
 const WINDOW_MS = 60_000;
 const MAX_REQUESTS_PER_WINDOW = 20;
 const RESEND_URL = "https://api.resend.com/emails";
