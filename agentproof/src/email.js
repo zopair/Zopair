@@ -21,5 +21,5 @@ export function createEmailDraft({ email, report }) {
     "This is a heuristic diagnostic report, not a guarantee or formal security certification."
   ].join("\n");
   const params = new URLSearchParams({ subject: "Your AgentProof diagnosis report", body });
-  return "mailto:" + encodeURIComponent(recipient) + "?" + params.toString();
+  return "mailto:" + encodeURIComponent(recipient).replace(/%40/gi, "@") + "?" + params.toString();
 }
