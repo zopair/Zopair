@@ -19,10 +19,7 @@ export function redactUrl(value) {
 export function classifyHealth(health) {
   const checks = [
     { id: 'api', status: health?.ok === true ? 'pass' : 'fail' },
-    { id: 'gumroad', status: health?.licenseVerificationConfigured === true ? 'pass' : 'fail' },
-    health?.reportEmailConfigured === true
-      ? { id: 'email', status: 'pass' }
-      : { id: 'email', status: 'blocked', action: 'Configure RESEND_API_KEY and REPORT_FROM_EMAIL in the API runtime environment.' }
+    { id: 'gumroad', status: health?.licenseVerificationConfigured === true ? 'pass' : 'fail' }
   ];
   return { status: checks.every((item) => item.status === 'pass') ? 'ready' : 'blocked', checks };
 }

@@ -1,4 +1,5 @@
 import { scanSourceFiles, summarizePublicFindings, toDiagnosisCsv, SCAN_RULE_COUNT } from "./scanner.js";
+import { createEmailDraft } from "./email.js";
 
 const API_BASE = "https://hlzptpre.basicdeploy.com";
 const $ = selector => document.querySelector(selector);
@@ -284,24 +285,18 @@ $("#sendReportEmail").addEventListener("click", async () => {
   }
   const button = $("#sendReportEmail");
   button.disabled = true;
-  button.textContent = "Sending report…";
+  button.textContent = "Preparing email…";
   try {
-    const response = await fetch(API_BASE + "/api/reports/email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, licenseKey: $("#licenseKey").value.trim(), report: ensureReport() })
-    });
-    const result = await response.json();
-    if (!response.ok) {
-      if (result.error === "email_delivery_not_configured") throw new Error("Email delivery is being configured. Download the report or save the certificate as PDF for now.");
-      throw new Error("The report could not be sent. Check the email address and try again.");
-    }
-    status.textContent = "Report sent to " + email + ". Check your inbox.";
+    const report = ensureReport();
+    downloadText("agentproof-diagnosis-" + report.reportId + ".json", JSON.stringify(report, null, 2));
+    downloadText("agentproof-diagnosis-" + report.reportId + ".csv", toDiagnosisCsv(report.findings), "text/csv;charset=utf-8");
+    window.location.href = createEmailDraft({ email, report });
+    status.textContent = "Email draft requested. If your email app opens, attach the downloaded JSON and CSV files, then press Send.";
   } catch (error) {
-    status.textContent = error instanceof Error ? error.message : "Email delivery failed.";
+    status.textContent = error instanceof Error ? error.message : "Could not prepare the email draft.";
   } finally {
     status.hidden = false;
     button.disabled = false;
-    button.textContent = "Send report to my email";
+    button.textContent = "Prepare email & download report";
   }
 });

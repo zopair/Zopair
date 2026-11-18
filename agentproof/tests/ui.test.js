@@ -13,12 +13,16 @@ test("diagnosis UI has unique IDs and no code-repair controls", () => {
   assert.doesNotMatch(app, /applyRepairPlan|buildRepairPlan|createBackupManifest|approveRepairButton/);
 });
 
-test("paid diagnosis provides certificate, report downloads and email delivery", () => {
+test("paid diagnosis provides certificate, report downloads and local email handoff", () => {
   for (const id of ["printCertificate", "exportDiagnosisJson", "exportDiagnosisCsv", "reportEmail", "sendReportEmail"]) {
     assert.match(html, new RegExp('id="' + id + '"'));
   }
   assert.match(app, /printDiagnosisCertificate/);
-  assert.match(app, /\/api\/reports\/email/);
+  assert.match(app, /createEmailDraft/);
+  assert.match(app, /agentproof-diagnosis-.*\.json/);
+  assert.match(app, /agentproof-diagnosis-.*\.csv/);
+  assert.doesNotMatch(app, /\/api\/reports\/email/);
+  assert.match(docs, /attaches both downloaded files/);
   assert.match(docs, /developer who created or maintains/i);
 });
 
