@@ -285,15 +285,15 @@ $("#sendReportEmail").addEventListener("click", async () => {
   }
   const button = $("#sendReportEmail");
   button.disabled = true;
-  button.textContent = "Sending report…";
+  button.textContent = "Preparing email…";
   try {
     const report = ensureReport();
     downloadText("agentproof-diagnosis-" + report.reportId + ".json", JSON.stringify(report, null, 2));
     downloadText("agentproof-diagnosis-" + report.reportId + ".csv", toDiagnosisCsv(report.findings), "text/csv;charset=utf-8");
     window.location.href = createEmailDraft({ email, report });
-    status.textContent = "Your email draft is ready. Attach the downloaded JSON and CSV files, then press Send in your email app.";
+    status.textContent = "Email draft requested. If your email app opens, attach the downloaded JSON and CSV files, then press Send.";
   } catch (error) {
-    status.textContent = error instanceof Error ? error.message : "Email delivery failed.";
+    status.textContent = error instanceof Error ? error.message : "Could not prepare the email draft.";
   } finally {
     status.hidden = false;
     button.disabled = false;
