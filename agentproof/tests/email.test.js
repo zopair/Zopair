@@ -20,8 +20,8 @@ test("creates a mailto draft addressed to the customer with report handoff detai
   const params = new URLSearchParams(url.search);
   assert.equal(params.get("subject"), "Your AgentProof diagnosis report");
   assert.match(params.get("body"), /AP-20261118-ABCDE/);
-  assert.match(params.get("body"), /agentproof-diagnosis\.json/);
-  assert.match(params.get("body"), /agentproof-diagnosis\.csv/);
+  assert.match(params.get("body"), /agentproof-diagnosis-.*\.json/);
+  assert.match(params.get("body"), /agentproof-diagnosis-.*\.csv/);
   assert.match(params.get("body"), /attach/i);
 });
 
