@@ -19,8 +19,8 @@ test("paid diagnosis provides certificate, report downloads and local email hand
   }
   assert.match(app, /printDiagnosisCertificate/);
   assert.match(app, /createEmailDraft/);
-  assert.match(app, /agentproof-diagnosis-.*\\.json/);
-  assert.match(app, /agentproof-diagnosis-.*\\.csv/);
+  assert.match(app, /agentproof-diagnosis-.*\.json/);
+  assert.match(app, /agentproof-diagnosis-.*\.csv/);
   assert.doesNotMatch(app, /\/api\/reports\/email/);
   assert.match(docs, /attaches both downloaded files/);
   assert.match(docs, /developer who created or maintains/i);
