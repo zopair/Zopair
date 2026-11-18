@@ -6,7 +6,8 @@
   "description": "Browser-local source code diagnosis with inspection certificate and developer handoff",
   "scripts": {
     "test": "node --test",
-    "check": "node --check src/core.js && node --check src/scanner.js && node --check src/app.js && node --check api/gumroad.js && node --check api/server.js && node --check tests/gumroad.test.js && node --check tests/api.test.js && node --check api/index.js"
+    "check": "node --check src/core.js && node --check src/scanner.js && node --check src/app.js && node --check api/gumroad.js && node --check api/server.js && node --check tests/gumroad.test.js && node --check tests/api.test.js && node --check api/index.js && node --check tools/ops-preflight.mjs && node --check tests/ops-preflight.test.js",
+    "ops:preflight": "node tools/ops-preflight.mjs"
   },
   "engines": {
     "node": ">=20"

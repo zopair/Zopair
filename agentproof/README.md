@@ -41,6 +41,11 @@ No runtime npm dependencies are required.
 
     npm test
     npm run check
+    npm run ops:preflight
+
+## Operations preflight
+
+`npm run ops:preflight` runs the test suite and syntax checks, verifies the published site and API health endpoint, and reports any remaining operational blocker without exposing URL credentials or query parameters. Override the endpoints with `AGENTPROOF_SITE_URL` and `AGENTPROOF_API_URL` when running against another environment.
 
 ## Paid diagnosis API
 
