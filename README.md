@@ -10,7 +10,7 @@ Building practical AI systems, agent infrastructure, security research tools, an
 
 **Owner — Zubair Investment** · M.Sc. Mathematics · Doctoral Research
 
-[Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) · [GitHub Repositories](https://github.com/zopair?tab=repositories) · [LinkedIn](https://www.linkedin.com/)
+[Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) · [GitHub Repositories](https://github.com/zopair?tab=repositories)
 
 </div>
 
