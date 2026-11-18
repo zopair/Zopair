@@ -2,83 +2,92 @@
 
 <div align="center">
 
-# Aly | Zubair
+# Aly Hussein Zopair
 
-### Building intelligent systems, engineering platforms, and practical AI products.
+### Independent Founder · Software Architect · Applied AI & Platform Engineering
 
-**Owner — Zubair Investment** · Mathematics (M.Sc.) · Doctoral Research
+Building practical AI systems, agent infrastructure, security research tools, and developer products.
 
-[GitHub](https://github.com/zopair) · [Repositories](https://github.com/zopair?tab=repositories)
+**Owner — Zubair Investment** · M.Sc. Mathematics · Doctoral Research
+
+[Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) · [GitHub Repositories](https://github.com/zopair?tab=repositories) · [LinkedIn](https://www.linkedin.com/)
 
 </div>
 
 ---
 
-## Project Portfolio — 14 Live Interfaces
+## Featured Engineering Projects
 
-| Project | Repository | Live interface |
+A focused selection of systems that demonstrate my work across AI security, agent orchestration, developer infrastructure, and native applications.
+
+| Project | What it does | Repository |
 | --- | --- | --- |
-| Zubair Engineering Lab | [Repository](https://github.com/zopair/Zubair-Engineering-Lab) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/engineering-lab/) |
-| CLT Platform | [Repository](https://github.com/zopair/CLT-Platform) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-platform/) |
-| Sovereign AI Arsenal | [Repository](https://github.com/zopair/Sovereign-AI-Arsenal) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/sovereign-ai-arsenal/) |
-| Zubair AI Army | [Repository](https://github.com/zopair/Zubair_AI_Army) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/zubair-ai-army/) |
-| Zubair Hunter AI | [Repository](https://github.com/zopair/Zubair-Hunter-AI) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/zubair-hunter-ai/) |
-| InWork | [Repository](https://github.com/zopair/inwork) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/inwork/) |
-| NexaPay | [Repository](https://github.com/zopair/NexaPay-Nexa-Next-Generation-Pay) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/nexapay/) |
-| Security Matrix | [Repository](https://github.com/zopair/security_matrix) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/security-matrix/) |
-| SINC-OS | [Repository](https://github.com/zopair/SINC-OS) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/sinc-os/) |
-| CLT Core Monorepo | [Repository](https://github.com/zopair/CLT-Core-Monorepo) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-core/) |
-| CLT ALY | [Repository](https://github.com/zopair/-CLT_ALY) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-aly/) |
-| Amazon Work — The Happy Little Train | [Repository](https://github.com/zopair/Amazon-work-) | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/amazon-work/) |
-| CarExit | [Repository](https://github.com/zopair/-CarExit-Platform) | [Open](https://zopair.github.io/-CarExit-Platform/) |
-| EasyHub | [Repository](https://github.com/zopair/EasyHub-) | [Open](https://zopair.github.io/EasyHub-/) |
+| **Siren-Trap** | Defensive multimodal AI security research: fixed acoustic canaries, a localhost-first decoy service, observation checks, and structured telemetry. Research prototype; not a production containment firewall. | [Source](https://github.com/zopair/Siren) · [Documentation](https://zopair.github.io/Siren/) |
+| **ZForge** | Open-source autonomous engineering platform with a central conversational core, bounded multi-agent coordination, approval-gated repository operations, and disposable GitHub Actions execution. | [Source](https://github.com/zopair/ZForge) |
+| **EasyHub** | Bilingual, client-side GitHub discovery that translates natural-language intent into repository search and keeps evaluation under human control. | [Source](https://github.com/zopair/EasyHub-) · [Live app](https://zopair.github.io/EasyHub-/) |
+| **Jarvis Android** | Native Android application for on-device AI inference, built with Jetpack Compose. | [Source](https://github.com/zopair/Jarvis-android-) |
+| **InWork** | Arabic-first, mobile-oriented PWA prototype focused on matching people with relevant opportunities. | [Source](https://github.com/zopair/inwork) · [Live beta](https://zopair.github.io/inwork/) |
 
-**Live project interfaces — verified 12 Nov 2026:**
+> Project maturity and deployment status vary. Please consult each repository's README, roadmap, tests, and security notes for the current verified scope.
 
-- [Zubair Engineering Lab — Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/)
-- [InWork — Beta](https://zopair.github.io/inwork/)
-- [NexaPay](https://zopair.github.io/NexaPay-Nexa-Next-Generation-Pay/)
-- [Riwaq — رِواق](https://zopair.github.io/Zubair_AI_Army/)
-- [Rakez — Performance Dashboard](https://zopair.github.io/Zubair_AI_Army/rakez/)
-- [SecurityMatrix — SOC](https://zopair.github.io/security_matrix/)
-- [OpenConnect](https://zopair.github.io/CLT-Core-Monorepo/)
-- [CarExit — سوق التخارج من عقود السيارات](https://zopair.github.io/-CarExit-Platform/)
-- [EasyHub — Intent, resolved](https://zopair.github.io/EasyHub-/)
+## What I Build
 
-## About
+- **AI systems & agent engineering:** agent orchestration, tool-use boundaries, evaluation, and workflow automation.
+- **AI and application security:** defensive research, threat modeling, trust boundaries, and security observability.
+- **Platform engineering:** modular architecture, execution runtimes, developer tooling, and maintainable backend systems.
+- **Native and web products:** Android applications, lightweight PWAs, and privacy-conscious client-side tools.
+- **Open-source engineering:** license-aware dependency selection, reproducible workflows, and transparent technical trade-offs.
 
-I work at the intersection of applied mathematics, software architecture, artificial intelligence, and platform engineering.
+## Selected Live Interfaces
 
-My focus is turning complex technical ideas into well-structured, maintainable systems — from AI agent architectures and automation platforms to developer infrastructure and product engineering.
-
-- **Leadership:** Owner at Zubair Investment.
-- **Academic background:** Master's degree in Mathematics; currently pursuing doctoral studies.
-- **Languages:** Arabic and English.
-- **Engineering interests:** AI systems and agentic workflows, software architecture, backend platforms, developer tooling, automation, and open-source technologies.
+| Product / Platform | Live interface |
+| --- | --- |
+| Zubair Engineering Lab | [Open portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) |
+| CLT Platform | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-platform/) |
+| Sovereign AI Arsenal | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/sovereign-ai-arsenal/) |
+| Zubair AI Army | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/zubair-ai-army/) |
+| Zubair Hunter AI | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/zubair-hunter-ai/) |
+| NexaPay | [Open](https://zopair.github.io/NexaPay-Nexa-Next-Generation-Pay/) |
+| Security Matrix | [Open](https://zopair.github.io/security_matrix/) |
+| SINC-OS | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/sinc-os/) |
+| OpenConnect / CLT Core | [Open](https://zopair.github.io/CLT-Core-Monorepo/) |
+| CarExit | [Open](https://zopair.github.io/-CarExit-Platform/) |
+| Riwaq | [Open](https://zopair.github.io/Zubair_AI_Army/) |
+| Rakez | [Open](https://zopair.github.io/Zubair_AI_Army/rakez/) |
 
 ## Engineering Principles
 
-- Architecture before accumulation of features.
-- Clear boundaries, modularity, and maintainability.
-- Evidence-based technical decisions and measurable outcomes.
-- Security, reliability, and responsible use of AI.
-- Preference for open standards and open-source components where practical.
+1. **Architecture before feature accumulation** — define boundaries, interfaces, and failure modes first.
+2. **Evidence before claims** — distinguish implemented behavior from roadmap, research hypotheses, and unverified performance.
+3. **Security by design** — least privilege, explicit approvals, secret isolation, and safe execution boundaries.
+4. **Lean infrastructure** — use the smallest reliable architecture that meets the actual requirement.
+5. **Maintainability and reversibility** — modular systems, automated checks, documented decisions, and rollback-aware changes.
+6. **Open-source responsibility** — review licenses, dependencies, provenance, and security risks before adoption.
+
+## About
+
+I work at the intersection of applied mathematics, software architecture, artificial intelligence, and product engineering. My focus is turning complex technical ideas into practical systems with clear boundaries, measurable behavior, and room to evolve.
+
+- **Leadership:** Owner at Zubair Investment.
+- **Academic background:** Master's degree in Mathematics; currently pursuing doctoral research.
+- **Languages:** Arabic and English.
+- **Interests:** agentic AI, AI security, platform engineering, automation, developer experience, and open-source ecosystems.
 
 ## بالعربية
 
-أعمل على تطوير الأنظمة الذكية والمنصات البرمجية، مع اهتمام خاص بالجمع بين الرياضيات التطبيقية، وهندسة البرمجيات، والذكاء الاصطناعي.
+أعمل على تصميم وبناء الأنظمة الذكية والمنصات البرمجية، مع اهتمام خاص بهندسة وكلاء الذكاء الاصطناعي، وأمن الأنظمة متعددة الوسائط، وهندسة المنصات، وأدوات المطورين.
 
-أركز على تحويل الأفكار التقنية المعقدة إلى منتجات وأنظمة عملية قابلة للصيانة والتوسع، بما يشمل معمارية وكلاء الذكاء الاصطناعي، وأدوات الأتمتة، والبنية التحتية البرمجية، وهندسة المنصات.
+أركز على تحويل الأفكار التقنية إلى منتجات عملية قابلة للفحص والصيانة والتوسع، مع توثيق حدود التنفيذ والتمييز بين القدرات المثبتة والخصائص التي لا تزال ضمن خارطة الطريق.
 
-- **الصفة:** مالك شركة الزبير للاستثمار.
-- **المؤهل الأكاديمي:** ماجستير في الرياضيات، وأتابع حاليًا دراسات الدكتوراه.
+- **الصفة:** مؤسس وصاحب شركة الزبير للاستثمار.
+- **المؤهل الأكاديمي:** ماجستير في الرياضيات، ودراسات دكتوراه.
 - **اللغات:** العربية والإنجليزية.
-- **مجالات الاهتمام والعمل:** الأنظمة الذكية، ووكلاء الذكاء الاصطناعي، ومعمارية البرمجيات، وهندسة المنصات، والأتمتة، وأدوات المطورين، والتقنيات مفتوحة المصدر.
+- **مجالات العمل:** الذكاء الاصطناعي، وأمن الأنظمة الذكية، وتنسيق الوكلاء، وهندسة المنصات، والأتمتة، وتطوير المنتجات البرمجية.
 
 ---
 
 <div align="center">
 
-**Design with rigor. Build with purpose. Improve continuously.**
+**Design with rigor. Build with purpose. Verify with evidence.**
 
 </div>
