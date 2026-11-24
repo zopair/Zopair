@@ -4,85 +4,97 @@
 
 # Aly Hussein Zopair
 
-### Independent Founder · Software Architect · Applied AI & Platform Engineering
+### Independent Software Architect · AI Systems & Automation Engineer
 
-Building practical AI systems, agent infrastructure, security research tools, and developer products.
+Founder at Zubair Investment | Building practical AI products, agent platforms, security research tools, and web applications.
 
-**Owner — Zubair Investment** · M.Sc. Mathematics · Doctoral Research
-
-[Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) · [GitHub Repositories](https://github.com/zopair?tab=repositories)
+[Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) · [GitHub Projects](https://github.com/zopair?tab=repositories)
 
 </div>
 
 ---
 
+## Professional Experience
+
+Independent founder and hands-on software builder, developing original software products and research prototypes from problem definition through architecture, implementation, testing, documentation, and GitHub-based delivery.
+
+### AI Agent Systems & Platform Engineering
+- Designed and developed **ZForge**, an autonomous engineering platform with a conversational control surface, task planning, specialist-agent coordination, approval-gated repository operations, task progress, and GitHub Actions-based ephemeral execution.
+- Implemented bounded multi-agent workflows, dependency-aware task scheduling, local model integration, repository memory, and web-build/browser-verification components.
+- Defined practical execution limits and explicit capability boundaries, distinguishing implemented functions from planned production capabilities.
+
+### AI Security Research
+- Created **Siren**, a research proof of concept for investigating autonomous-agent behavior through semantic decoys, interaction capture, telemetry, quarantine interfaces, and structured causal-evidence experiments.
+- Extended an existing acoustic research foundation with modular lure, observation, containment-contract, and evidence components.
+- Documented research limitations clearly; host-level isolation requires a deployment-owned enforcement adapter and is not represented as a production containment guarantee.
+
+### Web Product Engineering & Client-side Applications
+- Built **EasyHub**, a bilingual Arabic/English, browser-based open-source discovery application using GitHub's REST API, intent-oriented query handling, relevance ranking, filters, metadata previews, and local caching.
+- Delivered a deliberately lightweight static architecture using browser-native HTML, CSS, and JavaScript, with GitHub Pages hosting and GitHub Actions validation.
+- Developed **InWork**, an Arabic-first, RTL, mobile-oriented PWA beta with onboarding, profile setup, opportunity matching, filters, course recommendations, and demo personas.
+
+### Engineering Governance, Research & Delivery
+- Established **Zubair Engineering Lab** as a portfolio-level engineering workspace for project inventory, architecture standards, delivery readiness, testing evidence, decision records, and reusable engineering practices.
+- Built documentation and operating practices that separate verified implementation from assumptions, roadmaps, and unresolved dependencies.
+- Prefer zero-cost, open-source, static-hosting, and GitHub-native delivery models where they fit the product requirements.
+
+## Core Technical Competencies
+
+- **AI & Agent Engineering:** agent orchestration, tool-use workflows, task planning, specialist coordination, local model integration, agent evaluation boundaries.
+- **Software Architecture:** modular design, system decomposition, API boundaries, execution workflows, technical documentation, maintainability.
+- **Automation & DevOps:** GitHub Actions, CI workflows, repository automation, Git-based delivery, static deployment, artifact workflows.
+- **Application Security Research:** threat modeling, defensive decoys, telemetry, trust boundaries, evidence-oriented testing, security limitations analysis.
+- **Web Development:** HTML, CSS, JavaScript, responsive interfaces, Arabic RTL, bilingual UX, Progressive Web Apps, browser APIs.
+- **API & Integration Work:** GitHub REST API, metadata processing, client-side integrations, workflow interfaces.
+- **Quality Engineering:** test planning, regression checks, browser verification, acceptance criteria, implementation-status reporting.
+- **Open-source Engineering:** license-aware technology selection, dependency review, reproducible and budget-conscious architectures.
+
 ## Featured Engineering Projects
 
-A focused selection of systems that demonstrate my work across AI security, agent orchestration, developer infrastructure, and native applications.
-
-| Project | What it does | Repository |
+| Project | Demonstrated work | Links |
 | --- | --- | --- |
-| **Siren-Trap** | Defensive multimodal AI security research: fixed acoustic canaries, a localhost-first decoy service, observation checks, and structured telemetry. Research prototype; not a production containment firewall. | [Source](https://github.com/zopair/Siren) · [Documentation](https://zopair.github.io/Siren/) |
-| **ZForge** | Open-source autonomous engineering platform with a central conversational core, bounded multi-agent coordination, approval-gated repository operations, and disposable GitHub Actions execution. | [Source](https://github.com/zopair/ZForge) |
-| **EasyHub** | Bilingual, client-side GitHub discovery that translates natural-language intent into repository search and keeps evaluation under human control. | [Source](https://github.com/zopair/EasyHub-) · [Live app](https://zopair.github.io/EasyHub-/) |
-| **Jarvis Android** | Native Android application for on-device AI inference, built with Jetpack Compose. | [Source](https://github.com/zopair/Jarvis-android-) |
-| **InWork** | Arabic-first, mobile-oriented PWA prototype focused on matching people with relevant opportunities. | [Source](https://github.com/zopair/inwork) · [Live beta](https://zopair.github.io/inwork/) |
+| **ZForge** | Autonomous engineering platform, conversational task interface, specialist-agent orchestration, approval-gated GitHub operations, ephemeral Actions execution. | [Source](https://github.com/zopair/ZForge) · [Live interface](https://zopair.github.io/ZForge/) |
+| **Siren** | AI-agent security research PoC: semantic lures, telemetry, quarantine contracts, and causal-evidence experiments. | [Source](https://github.com/zopair/Siren) · [Documentation](https://zopair.github.io/Siren/) |
+| **EasyHub** | Arabic/English open-source discovery app with GitHub API search, relevance ranking, filters, and metadata previews. | [Source](https://github.com/zopair/EasyHub-) · [Live app](https://zopair.github.io/EasyHub-/) |
+| **InWork** | Arabic-first mobile PWA beta for profiles and opportunity matching. | [Source](https://github.com/zopair/inwork) · [Live beta](https://zopair.github.io/inwork/) |
+| **Zubair Engineering Lab** | Portfolio engineering workspace with project registry, delivery standards, research, and readiness tracking. | [Source](https://github.com/zopair/Zubair-Engineering-Lab) · [Live portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) |
+| **Jarvis Android** | Native Android / on-device AI application project. | [Source](https://github.com/zopair/Jarvis-android-) |
 
-> Project maturity and deployment status vary. Please consult each repository's README, roadmap, tests, and security notes for the current verified scope.
+> Project maturity differs. These are independently developed products, prototypes, and research work—not claims of commercial client deployments. Refer to each repository for current implementation status, test evidence, and limitations.
 
-## What I Build
+## How I Work
 
-- **AI systems & agent engineering:** agent orchestration, tool-use boundaries, evaluation, and workflow automation.
-- **AI and application security:** defensive research, threat modeling, trust boundaries, and security observability.
-- **Platform engineering:** modular architecture, execution runtimes, developer tooling, and maintainable backend systems.
-- **Native and web products:** Android applications, lightweight PWAs, and privacy-conscious client-side tools.
-- **Open-source engineering:** license-aware dependency selection, reproducible workflows, and transparent technical trade-offs.
-
-## Selected Live Interfaces
-
-| Product / Platform | Live interface |
-| --- | --- |
-| Zubair Engineering Lab | [Open portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) |
-| CLT Platform | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/clt-platform/) |
-| Sovereign AI Arsenal | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/sovereign-ai-arsenal/) |
-| Zubair AI Army | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/zubair-ai-army/) |
-| Zubair Hunter AI | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/zubair-hunter-ai/) |
-| NexaPay | [Open](https://zopair.github.io/NexaPay-Nexa-Next-Generation-Pay/) |
-| Security Matrix | [Open](https://zopair.github.io/security_matrix/) |
-| SINC-OS | [Open](https://zopair.github.io/Zubair-Engineering-Lab/portfolio/engineering/sinc-os/) |
-| OpenConnect / CLT Core | [Open](https://zopair.github.io/CLT-Core-Monorepo/) |
-| CarExit | [Open](https://zopair.github.io/-CarExit-Platform/) |
-| Riwaq | [Open](https://zopair.github.io/Zubair_AI_Army/) |
-| Rakez | [Open](https://zopair.github.io/Zubair_AI_Army/rakez/) |
-
-## Engineering Principles
-
-1. **Architecture before feature accumulation** — define boundaries, interfaces, and failure modes first.
-2. **Evidence before claims** — distinguish implemented behavior from roadmap, research hypotheses, and unverified performance.
-3. **Security by design** — least privilege, explicit approvals, secret isolation, and safe execution boundaries.
-4. **Lean infrastructure** — use the smallest reliable architecture that meets the actual requirement.
-5. **Maintainability and reversibility** — modular systems, automated checks, documented decisions, and rollback-aware changes.
-6. **Open-source responsibility** — review licenses, dependencies, provenance, and security risks before adoption.
+1. Start from the actual user or business problem.
+2. Choose the smallest architecture that can meet the requirement.
+3. Build working functionality before adding infrastructure.
+4. Use tests and observable evidence to validate behavior.
+5. Document limitations and distinguish shipped work from roadmap items.
+6. Prefer open-source and zero-cost tooling without compromising the essential requirements.
 
 ## About
 
-I work at the intersection of applied mathematics, software architecture, artificial intelligence, and product engineering. My focus is turning complex technical ideas into practical systems with clear boundaries, measurable behavior, and room to evolve.
+I work at the intersection of applied mathematics, software architecture, artificial intelligence, and product engineering. My focus is turning technical ideas into usable systems with clear boundaries, testable behavior, and maintainable implementation.
 
-- **Leadership:** Owner at Zubair Investment.
-- **Academic background:** Master's degree in Mathematics; currently pursuing doctoral research.
+- **Leadership:** Founder and owner at Zubair Investment.
+- **Academic background:** Master's degree in Mathematics; doctoral studies.
 - **Languages:** Arabic and English.
-- **Interests:** agentic AI, AI security, platform engineering, automation, developer experience, and open-source ecosystems.
+- **Primary interests:** AI agents, software architecture, application security research, automation, platform engineering, and web products.
 
 ## بالعربية
 
-أعمل على تصميم وبناء الأنظمة الذكية والمنصات البرمجية، مع اهتمام خاص بهندسة وكلاء الذكاء الاصطناعي، وأمن الأنظمة متعددة الوسائط، وهندسة المنصات، وأدوات المطورين.
+مؤسس ومطوّر منتجات تقنية مستقل، أعمل على تصميم وبناء أنظمة برمجية ومنتجات عملية، من تحديد المشكلة وتصميم المعمارية إلى التنفيذ والاختبار والتوثيق والنشر.
 
-أركز على تحويل الأفكار التقنية إلى منتجات عملية قابلة للفحص والصيانة والتوسع، مع توثيق حدود التنفيذ والتمييز بين القدرات المثبتة والخصائص التي لا تزال ضمن خارطة الطريق.
+تشمل خبراتي العملية الموثقة في مشروعاتي:
 
-- **الصفة:** مؤسس وصاحب شركة الزبير للاستثمار.
-- **المؤهل الأكاديمي:** ماجستير في الرياضيات، ودراسات دكتوراه.
-- **اللغات:** العربية والإنجليزية.
-- **مجالات العمل:** الذكاء الاصطناعي، وأمن الأنظمة الذكية، وتنسيق الوكلاء، وهندسة المنصات، والأتمتة، وتطوير المنتجات البرمجية.
+- **هندسة وكلاء الذكاء الاصطناعي:** بناء ZForge، وتنسيق الوكلاء المتخصصين، وتخطيط المهام، وربط التنفيذ بسير عمل GitHub.
+- **أبحاث أمن الذكاء الاصطناعي:** تطوير Siren كنموذج بحثي لدراسة سلوك الوكلاء باستخدام الطُعم الرقمي، ورصد التفاعلات، والتليمترية، وتجارب الأدلة السببية.
+- **تطوير تطبيقات الويب:** بناء EasyHub كتطبيق ثنائي اللغة يعتمد على GitHub API، وتطوير InWork كتطبيق PWA عربي يدعم RTL وتجربة الهاتف.
+- **هندسة المنصات والأتمتة:** استخدام GitHub Actions، وأتمتة المستودعات، والتحقق من البناء، والنشر الثابت، وتنظيم عمليات التطوير.
+- **المعمارية والجودة:** تقسيم الأنظمة إلى مكونات واضحة، وكتابة التوثيق الفني، وتحديد معايير القبول، والتحقق من التنفيذ والتمييز بين المنجز والمخطط.
+
+**الصفة:** مؤسس وصاحب شركة الزبير للاستثمار.  
+**المؤهل الأكاديمي:** ماجستير في الرياضيات، ودراسات دكتوراه.  
+**اللغات:** العربية والإنجليزية.
 
 ---
 
