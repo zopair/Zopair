@@ -1,50 +1,74 @@
-# Repository Metadata Plan — First Featured Batch
+# GitHub Profile & Repository Metadata Plan
 
-This file records metadata recommendations for the first six featured repositories. It does not claim that GitHub repository settings or profile pins have already been changed.
+**Updated:** 2026-11-26  
+**Purpose:** Keep profile pin recommendations, repository descriptions, topics, and homepage recommendations aligned with the current public portfolio.
 
-## Recommended featured order
+This file is a prepared metadata plan. It does not claim that GitHub repository descriptions, topics, Homepage settings, or pinned repositories have already been changed.
 
-| Order | Repository | Description | Homepage |
+## Recommended profile pin order
+
+| Order | Repository | Short description | Homepage |
 |---:|---|---|---|
-| 1 | `ZForge` | Open-source AI engineering platform for approval-aware agent workflows, GitHub Actions execution, and verifiable software delivery. | https://zopair.github.io/ZForge/ |
-| 2 | `Siren` | Python research framework for defensive AI-agent security, semantic lures, acoustic canaries, telemetry, and causal evidence. | https://zopair.github.io/Siren/ |
-| 3 | `Zubair_AI_Army` | Modular AI product experiments with a bounded Cloudflare Worker for read-only GitHub repository operations. | No verified public deployment URL recorded |
-| 4 | `Sovereign-AI-Arsenal` | Modular platform for GitHub repository discovery, technical evaluation, trend intelligence, semantic search, and optional provider-neutral AI integration. | No verified public deployment URL recorded |
-| 5 | `Amazon` | Automated production tooling and quality checks for original children's coloring-book interiors and covers. | No verified public deployment URL recorded |
-| 6 | `Zubair-Engineering-Lab` | Engineering portfolio of software prototypes, reusable work samples, technical documentation, and delivery evidence. | https://zopair.github.io/Zubair-Engineering-Lab/ |
+| 1 | `ZForge` | AI engineering platform for approval-aware agent workflows, bounded GitHub Actions execution, and verifiable software delivery. | https://zopair.github.io/ZForge/ |
+| 2 | `Engine-` | GitHub-native autonomous agent and workflow engine with local GGUF inference, persistent state, and human-reviewed self-evolution. | No verified public deployment URL recorded |
+| 3 | `Siren` | Defensive AI-agent security research framework for semantic lures, telemetry, containment orchestration, and causal evidence. | https://zopair.github.io/Siren/ |
+| 4 | `instinct-automation` | Digital-product production orchestrator with manifest validation, compliance preflight, listing drafts, and owner-gated publishing handoff. | No verified public deployment URL recorded |
+| 5 | `relaymind-core` | Multilingual vertical-video production engine with local prompt enhancement, deterministic fallbacks, narration, captions, and FFmpeg rendering. | No verified public deployment URL recorded |
+| 6 | `Zubair-Engineering-Lab` | Engineering portfolio of software prototypes, technical documentation, reusable work samples, and delivery evidence. | https://zopair.github.io/Zubair-Engineering-Lab/ |
 
-## Recommended GitHub topics
+Pin order is a recommendation for profile presentation. It is not evidence that GitHub pin settings have already been changed.
 
-Topics are lowercase GitHub labels. Keep each repository's topic set focused on implemented functionality rather than roadmap items.
+## Recommended repository topics
+
+Topics are lowercase GitHub labels. Keep each set focused on implemented functionality, not roadmap items.
 
 ### ZForge
 `ai-agents`, `agent-orchestration`, `software-engineering`, `github-actions`, `workflow-automation`, `developer-tools`, `nodejs`
 
+### Engine-
+`ai-agents`, `agent-framework`, `github-actions`, `workflow-automation`, `llama-cpp`, `sqlite`, `python`
+
 ### Siren
 `ai-security`, `ai-agent-security`, `defensive-security`, `prompt-injection`, `security-research`, `python`, `semantic-lures`
 
-### Zubair_AI_Army
-`ai-agents`, `cloudflare-workers`, `github-automation`, `repository-automation`, `workflow-automation`, `javascript`, `cloudflare-d1`
+### instinct-automation
+`digital-products`, `workflow-automation`, `amazon-kdp`, `gumroad`, `python`, `github-actions`, `approval-workflow`
 
-### Sovereign-AI-Arsenal
-`repository-intelligence`, `github-api`, `fastapi`, `semantic-search`, `software-analysis`, `python`, `ai-platform`
-
-### Amazon
-`kdp`, `publishing-automation`, `pdf-generation`, `python`, `coloring-books`, `print-on-demand`, `quality-assurance`
+### relaymind-core
+`video-automation`, `ffmpeg`, `python`, `arabic`, `text-to-speech`, `llama-cpp`, `github-actions`
 
 ### Zubair-Engineering-Lab
 `engineering-portfolio`, `software-engineering`, `technical-documentation`, `proof-of-concept`, `developer-portfolio`, `github-pages`
 
-## Application status
+## Additional public projects to retain in the profile
 
-The connected GitHub toolset available in this workflow supports repository reads and file/branch/PR writes, but does not expose the repository metadata update endpoint or profile pinned-items mutation. Therefore, the descriptions, Homepage URLs, and topics above are prepared for application but have not been written into repository settings. No workaround using a paid service or non-GitHub automation was used.
+| Repository | Description | Homepage |
+|---|---|---|
+| `Zubair_AI_Army` | AI product experiments with a bounded Cloudflare Worker for read-only GitHub repository operations. | No verified public deployment URL recorded |
+| `Sovereign-AI-Arsenal` | Repository discovery, technical evaluation, trend intelligence, and semantic search. | No verified public deployment URL recorded |
+| `WAKEEL` | TradeTech proof of concept for digital export-marketing workflows and exporter ecosystem coordination. | No verified public deployment URL recorded |
+| `ARAGON-` | Arabic-first browser utilities for JSON, Base64, word counting, and password generation. | https://zopair.github.io/ARAGON-/ |
+| `inwork` | Arabic-first work and opportunity discovery prototype using demo data and local matching. | https://zopair.github.io/inwork/ |
+| `Zopair` / `agentproof` | Browser-local source-code diagnosis with heuristic findings, developer guidance, and report generation. | https://zopair.github.io/Zopair/ |
+| `EasyHub-` | Static browser app for discovering open-source repositories through GitHub search. | https://zopair.github.io/EasyHub-/ |
+| `inwork-poc` | Early interactive prototype for technical-services marketplace workflows. | https://zopair.github.io/inwork-poc/ |
+| `NexaPay-Nexa-Next-Generation-Pay` | Arabic-first concept UI for international freelance balances and EGP/USD conversion. | No verified public deployment URL recorded |
+| `Amazon` | Tooling for original children's coloring-book production and PDF quality checks. | No verified public deployment URL recorded |
+| `Amazon-work-` | Bilingual Arabic/English children's paperback production and validation pipeline. | No verified public deployment URL recorded |
+| `-CarExit-Platform` | Local vehicle-cost calculator and marketplace concept. | No verified public deployment URL recorded |
 
-GitHub documents repository metadata updates and topic replacement in the [REST API documentation](https://docs.github.com/en/rest/repos/repos). Topic replacement requires repository Administration write permission.
+Empty repositories, skeleton-only projects, and private reference libraries are intentionally excluded from the featured public portfolio until they have a defined, reviewable implementation.
 
+## Profile accuracy rules
 
-## Additional candidate (not in the first six)
+- Do not list forks as original projects or claim upstream authorship.
+- Distinguish working software from PoCs, static concepts, simulations, and planned capabilities.
+- Do not claim production readiness, commercial launch, security certification, financial integration, or marketplace acceptance without independent evidence.
+- Use each repository's README as the source of truth for its stack, tests, setup, limitations, and current status.
+- Do not expose private repositories or internal-only material in the public profile.
 
-### WAKEEL
-Description: `TradeTech proof of concept for digital export-marketing workflows and exporter ecosystem coordination.`
+## Application status and limitation
 
-Topics: `tradetech`, `export-marketing`, `digital-trade`, `egypt`, `marketplace`, `trade-technology`, `proof-of-concept`.
+The connected GitHub operations used for this profile refresh can read repository settings and edit repository files through branches and pull requests, but do not expose the repository metadata update endpoint or profile pinned-items mutation. Therefore, descriptions, Homepage URLs, topics, and actual profile pins remain recommendations until applied through GitHub's repository settings or an authorized metadata endpoint.
+
+GitHub documents repository description, homepage, and topic management in the [REST API documentation](https://docs.github.com/en/rest/repos/repos). Topic replacement requires repository Administration write permission.
