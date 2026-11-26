@@ -4,11 +4,11 @@
 
 # Aly Hussein Zopair
 
-### AI Systems & Full-Stack Automation Engineer
+### AI Systems & Full-Stack Automation Engineer | Founder, Zubair Investment
 
-**Building AI Agents, Browser Verification Workflows & Web Products**
+**Designing and developing AI agents, automation workflows, and practical web products.**
 
-[Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) · [Repositories](https://github.com/zopair?tab=repositories)
+[Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) · [Selected Repositories](https://github.com/zopair?tab=repositories)
 
 </div>
 
@@ -16,9 +16,11 @@
 
 ## About
 
-I design and build practical software systems across AI agent engineering, full-stack development, workflow automation, and product prototyping. My work spans problem definition, system architecture, implementation, testing, documentation, and GitHub-native delivery.
+I work on practical software systems across AI agent engineering, full-stack development, workflow automation, and product prototyping. My work includes problem definition, system design, implementation, testing, documentation, and GitHub-native delivery.
 
-I focus on usable outcomes, maintainable code, clear implementation boundaries, and evidence-based verification. I favor open-source technologies and lightweight architectures where they meet the product's needs.
+I value clear technical boundaries, maintainable code, lightweight architectures, and claims supported by verifiable implementation evidence. I favor open-source technologies and cost-conscious solutions.
+
+This profile highlights selected projects I own or actively develop. **Forked repositories are not presented as original work or personal achievements.** Credit for upstream projects remains with their original authors; any external contribution should be evaluated through its actual commits or accepted contributions.
 
 ## Core Areas
 
@@ -29,39 +31,53 @@ I focus on usable outcomes, maintainable code, clear implementation boundaries, 
 - **Software Architecture:** modular design, API integration, maintainability, and technical documentation.
 - **Applied AI Security Research:** agent behavior research, telemetry, trust boundaries, and defensive testing.
 
-## Featured Projects
+## Selected Projects & Research
 
-| Project | Focus | Links |
+| Project | Work focus | Current scope |
 | --- | --- | --- |
-| **ZForge** | AI-assisted engineering platform for task planning, agent workflows, and GitHub-based execution. | [Repository](https://github.com/zopair/ZForge) · [Live](https://zopair.github.io/ZForge/) |
-| **Siren** | AI-agent security research prototype focused on behavioral observation, telemetry, and evidence-driven experiments. | [Repository](https://github.com/zopair/Siren) |
-| **EasyHub** | Browser-based Arabic/English open-source discovery application powered by GitHub search. | [Repository](https://github.com/zopair/EasyHub-) |
-| **Zubair Engineering Lab** | Engineering portfolio and workspace for project documentation, standards, and delivery evidence. | [Repository](https://github.com/zopair/Zubair-Engineering-Lab) · [Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) |
-| **InWork** | Arabic-first, mobile-oriented PWA prototype for profiles and opportunity discovery. | [Repository](https://github.com/zopair/inwork) |
-| **WAKEEL** | TradeTech sandbox concept exploring digital export-marketing workflows and a lightweight platform model. | [Repository](https://github.com/zopair/WAKEEL) |
+| **[ZForge](https://github.com/zopair/ZForge)** | AI-assisted engineering platform for task planning, agent workflows, and GitHub-based execution. | Active development; capabilities and limitations are documented in the repository. |
+| **[Siren](https://github.com/zopair/Siren)** | Research into AI-agent behavior, semantic lures, session containment, telemetry, and evidence generation. | Research proof of concept; not presented as production-grade containment. |
+| **[EasyHub](https://github.com/zopair/EasyHub-)** | Arabic/English interface for discovering open-source projects through GitHub. | Web product / development project. |
+| **[Zubair Engineering Lab](https://github.com/zopair/Zubair-Engineering-Lab)** | Engineering portfolio, project documentation, standards, and delivery evidence. | Portfolio and engineering workspace. |
+| **[InWork](https://github.com/zopair/inwork)** | Arabic-first, mobile-oriented platform for profiles and opportunity discovery. | PWA prototype. |
+| **[WAKEEL](https://github.com/zopair/WAKEEL)** | TradeTech sandbox concept for digital export-marketing workflows. | Concept and prototype; not represented as a launched commercial platform. |
 
-> Project maturity varies. Repositories contain prototypes, research, and product work at different stages. Each project's documentation is the source of truth for current functionality, validation, and limitations.
+Project stages differ. A repository link is not, by itself, a claim that a project is complete, commercially launched, independently certified, or production-ready. Each repository's documentation is the reference for its implemented features, tests, limitations, and roadmap.
 
 ## Engineering Principles
 
 1. Solve the real problem before adding technology.
 2. Prefer the smallest architecture that works.
 3. Build and verify usable functionality in small increments.
-4. Keep implementation status, assumptions, and roadmap items distinct.
-5. Favor open-source, cost-conscious, and GitHub-native delivery.
+4. Separate implemented capabilities from plans, assumptions, and simulations.
+5. Attribute upstream work accurately; never present a fork as original authorship.
+6. Favor open-source, cost-conscious, and GitHub-native delivery.
 
 ## Background
 
 - **Role:** Founder, Zubair Investment
 - **Academic background:** Master's degree in Mathematics; doctoral studies
 - **Languages:** Arabic and English
-- **Interests:** AI systems, software architecture, automation, web products, and applied security research
+- **Areas of interest:** AI systems, software architecture, automation, web products, and applied security research
 
 ## بالعربية
 
-مهندس أنظمة ذكاء اصطناعي وأتمتة وتطوير تطبيقات متكاملة. أعمل على تصميم وبناء وكلاء الذكاء الاصطناعي، وسير عمل التحقق من واجهات المتصفح، ومنتجات الويب، مع التركيز على التنفيذ العملي والمعمارية القابلة للصيانة والاختبار والتوثيق.
+أنا علي حسين زبير، مؤسس شركة الزبير للاستثمار، وأعمل على تصميم وتطوير أنظمة الذكاء الاصطناعي، ووكلاء المهام المستقلين، وأدوات الأتمتة، وتطبيقات الويب.
 
-تشمل مشروعاتي: **ZForge** لهندسة الأنظمة المعتمدة على الوكلاء، و**Siren** للأبحاث التطبيقية في سلوك وأمن وكلاء الذكاء الاصطناعي، و**EasyHub** لاكتشاف مشروعات المصادر المفتوحة، و**InWork** لتطبيقات فرص العمل، و**WAKEEL** لنماذج تكنولوجيا التجارة والتصدير، إلى جانب **Zubair Engineering Lab** كمساحة لعرض الأعمال والمعايير الهندسية.
+يركز عملي على تحليل المشكلة، وتصميم المعمارية، والتنفيذ، والاختبار، والتوثيق، مع تفضيل الحلول مفتوحة المصدر والهياكل البرمجية العملية القابلة للصيانة.
+
+تعرض هذه الصفحة مجموعة مختارة من المشروعات التي أمتلكها أو أشارك فعليًا في تطويرها، ومنها:
+
+- **ZForge:** منصة قيد التطوير لهندسة البرمجيات بمساعدة الوكلاء وسير العمل المعتمد على GitHub.
+- **Siren:** نموذج بحثي لدراسة سلوك وكلاء الذكاء الاصطناعي والرصد والاحتواء وإنتاج الأدلة؛ وليس ادعاءً بوجود نظام احتواء إنتاجي مكتمل.
+- **EasyHub:** مشروع لاكتشاف مشروعات المصادر المفتوحة بواجهة عربية وإنجليزية.
+- **Zubair Engineering Lab:** مساحة لعرض الأعمال والتوثيق والمعايير الهندسية.
+- **InWork:** نموذج أولي لتطبيق ويب تقدمي لاكتشاف الملفات الشخصية والفرص.
+- **WAKEEL:** تصور ونموذج أولي لمنصة TradeTech لدعم التسويق التصديري الرقمي.
+
+لا أحتسب المستودعات المنسوخة (Forks) ضمن أعمالي الأصلية، ولا أنسب لنفسي ملكية أو تأليف مشروعات الآخرين. وتظل حقوق الفكرة والكود الأصلي محفوظة لأصحابها، ولا تُنسب أي مساهمة خارجية إليّ إلا بقدر ما تثبته مساهماتي الفعلية.
+
+تختلف مراحل نضج المشروعات؛ لذلك أوضح حالة كل مشروع وحدود تنفيذه بدلًا من وصف النماذج الأولية بأنها منتجات مكتملة أو مطروحة تجاريًا.
 
 ---
 
