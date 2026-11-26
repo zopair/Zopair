@@ -4,11 +4,11 @@
 
 # Aly Hussein Zopair
 
-### AI Systems & Full-Stack Automation Engineer | Founder, Zubair Investment
+### AI Systems & Software Automation Engineer | Founder, Zubair Investment
 
-**Building practical AI-agent systems, automation workflows, and open-source software products.**
+**Designing, building, and validating practical AI systems, autonomous workflows, and software products.**
 
-[Engineering Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) · [Repositories](https://github.com/zopair?tab=repositories)
+[Engineering Portfolio](https://zopair.github.io/Zubair-Engineering-Lab/) · [Public Repositories](https://github.com/zopair?tab=repositories)
 
 </div>
 
@@ -16,84 +16,100 @@
 
 ## About
 
-I design and develop software systems across AI-agent engineering, full-stack applications, workflow automation, and applied security research. My work spans problem definition, architecture, implementation, testing, documentation, and GitHub-native delivery.
+I work across AI-agent engineering, software architecture, workflow automation, full-stack applications, and applied security research. My project work covers the full engineering cycle: problem definition, system design, implementation, testing, documentation, and GitHub-native delivery.
 
-I prioritize maintainable code, clear system boundaries, cost-conscious architecture, open-source technologies, and evidence-backed project claims.
+My approach is evidence-led and practical: prefer maintainable architecture, open-source technologies, cost-conscious infrastructure, bounded automation, and clear human approval boundaries.
 
-This profile highlights projects I own or actively develop. **Forked repositories are not presented as original work or personal achievements.** Upstream authors retain credit for their original code; contributions are attributed only where the commit history supports them.
+This profile highlights repositories I own or actively develop. **Forked repositories are not presented as original work or personal achievements.** Upstream authors retain credit for their code; my contributions are represented only where the repository history supports them.
 
-## Featured Projects — Recommended Pin Order
+## Featured Engineering Projects
 
-These six repositories provide a balanced view of agent engineering, AI security, platform architecture, applied product development, and engineering delivery.
+The following six projects are the recommended profile highlights. Their order reflects portfolio breadth and current engineering focus, not a claim that every project is production-ready.
 
-| Pin | Project | Engineering focus | Current scope |
-|---:|---|---|---|
-| 1 | **[ZForge](https://github.com/zopair/ZForge)** · [Pages](https://zopair.github.io/ZForge/) | Agent-assisted engineering workflows, task planning, specialist orchestration, GitHub Actions execution, and verification. | Active PoC / MVP; cloud execution is event-driven and bounded. |
-| 2 | **[Siren](https://github.com/zopair/Siren)** · [Research site](https://zopair.github.io/Siren/) | Defensive AI-agent security research: semantic lures, telemetry, containment orchestration, and causal evidence. | Research PoC; host-level containment requires a deployment-owned enforcement adapter. |
-| 3 | **[Zubair AI Army](https://github.com/zopair/Zubair_AI_Army)** | Portfolio of AI product experiments with a bounded, read-only repository-operations worker. | PoC / MVP; implemented worker scope is distinguished from planned product tracks. |
-| 4 | **[Sovereign AI Arsenal](https://github.com/zopair/Sovereign-AI-Arsenal)** | Repository discovery, technical evaluation, trend analysis, semantic search, and provider-neutral AI integration. | PoC / MVP; deployment dependencies and sandbox boundaries are documented. |
-| 5 | **[WAKEEL](https://github.com/zopair/WAKEEL)** | TradeTech sandbox concept for digital export-marketing workflows. | Concept and prototype; not represented as a launched commercial platform. |
-| 6 | **[Zubair Engineering Lab](https://github.com/zopair/Zubair-Engineering-Lab)** · [Portfolio site](https://zopair.github.io/Zubair-Engineering-Lab/) | Engineering portfolio, reusable work samples, project documentation, and delivery evidence. | Portfolio and engineering workspace. |
-
-> Pin order is a recommendation for profile presentation. It is not a claim that GitHub's repository pin settings have already been changed.
+| Focus | Project | What it demonstrates | Verified project stage |
+|---|---|---|---|
+| Agent engineering | **[ZForge](https://github.com/zopair/ZForge)** · [Live UI](https://zopair.github.io/ZForge/) | Agent-assisted software workflows, task planning, specialist orchestration, bounded GitHub Actions execution, and verification. | Active PoC / MVP |
+| Autonomous systems | **[ENGINE](https://github.com/zopair/Engine-)** | GitHub-native agent and workflow orchestration, local GGUF inference, SQLite-backed state, and human-reviewed self-evolution. | Active PoC / MVP |
+| AI security research | **[Siren](https://github.com/zopair/Siren)** · [Research site](https://zopair.github.io/Siren/) | Defensive AI-agent security research, semantic lures, telemetry, containment orchestration, and causal evidence. | Research PoC; host enforcement requires a deployment-owned adapter |
+| Product automation | **[instinct-automation](https://github.com/zopair/instinct-automation)** | Digital-product manifests, KDP/Gumroad pipeline coordination, compliance preflight, listing drafts, and per-version owner approval. | Working control-flow PoC; publishing remains manual |
+| Media engineering | **[RelayMind Core](https://github.com/zopair/relaymind-core)** | Arabic/English short-video pipeline, local prompt enhancement, deterministic fallbacks, narration, captions, and FFmpeg rendering. | Functional PoC |
+| Engineering portfolio | **[Zubair Engineering Lab](https://github.com/zopair/Zubair-Engineering-Lab)** · [Portfolio site](https://zopair.github.io/Zubair-Engineering-Lab/) | Engineering case studies, prototypes, reusable work samples, technical documentation, and delivery evidence. | Portfolio and engineering workspace |
 
 ## Additional Projects
 
-| Repository | Work focus | Current scope |
-|---|---|---|
-| **[EasyHub](https://github.com/zopair/EasyHub-)** · [Live app](https://zopair.github.io/EasyHub-/) | Human-led discovery of open-source projects through GitHub search. | Static browser application; does not install or execute repositories. |
-| **[InWork POC](https://github.com/zopair/inwork-poc)** · [Live preview](https://zopair.github.io/inwork-poc/) | Arabic-first, mobile-oriented prototype for technical-services marketplace workflows. | Interactive simulation; sample profiles, payments, and tracking are not live transactions. |
-| **[Amazon KDP Production Engine](https://github.com/zopair/Amazon)** | Production tooling and quality checks for original children's coloring-book interiors and covers. | Tooling prototype; publishing remains manual and owner-controlled. |
-| **[Engine-](https://github.com/zopair/Engine-)** | GitHub-native platform concept for creating, managing, and evolving agents and workflows. | Active engineering PoC; runtime boundaries are documented in the repository. |
-| **[AI Cinematic Studio](https://github.com/zopair/ai-cinematic-studio)** | Local-first video-production workflow for planning, storyboards, procedural visuals, rendering, and QA. | Early prototype; procedural output is not described as AI-generated video. |
-| **[SINC-OS](https://github.com/zopair/SINC-OS)** | Experiments in autonomous media workflows and AI gateway/orchestrator foundations. | Separate PoC tracks; integration status is described in the repository. |
-| **[CLT Platform](https://github.com/zopair/CLT-Platform)** · **[CLT Core Monorepo](https://github.com/zopair/CLT-Core-Monorepo)** | Sovereign orchestration and core workspace concepts. | Architecture and early-development repositories; no production-scale deployment is claimed. |
-| **[Zubair Hunter AI](https://github.com/zopair/Zubair-Hunter-AI)** | Early concept for an AI-agent workspace. | Concept repository; proposed capabilities are not represented as verified operational features. |
+### AI platforms, research, and automation
 
-Project stages differ. A repository link is not, by itself, a claim that a project is complete, commercially launched, independently certified, or production-ready. Each repository's README is the reference for implemented features, installation, tests, limitations, and roadmap.
+| Project | Engineering focus | Scope and limitations |
+|---|---|---|
+| **[Zubair AI Army](https://github.com/zopair/Zubair_AI_Army)** | AI product experiments and bounded repository-operations automation. | PoC / MVP; implemented worker scope is separated from planned tracks. |
+| **[Sovereign AI Arsenal](https://github.com/zopair/Sovereign-AI-Arsenal)** | Open-source repository discovery, technical evaluation, trend intelligence, and semantic search. | PoC / MVP; deployment dependencies and boundaries are documented in the repository. |
+| **[WAKEEL](https://github.com/zopair/WAKEEL)** | TradeTech sandbox concept for digital export-marketing workflows. | Concept and prototype; not a launched commercial export platform. |
+
+### Browser products and applied prototypes
+
+| Project | Engineering focus | Scope and limitations |
+|---|---|---|
+| **[ARAGON](https://github.com/zopair/ARAGON-)** · [Live app](https://zopair.github.io/ARAGON-/) | Arabic-first browser utilities for JSON, Base64, word counting, and password generation. | Static browser app; current tools process inputs locally. |
+| **[InWork](https://github.com/zopair/inwork)** · [Live preview](https://zopair.github.io/inwork/) | Arabic-first discovery prototype for flexible, remote, home-based, and local work opportunities. | Beta / PoC using demo data; not a live job feed or production marketplace. |
+| **[AgentProof](https://github.com/zopair/Zopair/tree/main/agentproof)** | Browser-local source-code diagnostics, findings reports, and paid diagnosis verification. | Diagnosis-only; heuristic checks, not a full SAST or security certification. |
+| **[EasyHub](https://github.com/zopair/EasyHub-)** · [Live app](https://zopair.github.io/EasyHub-/) | Browser-based discovery of open-source repositories through GitHub search. | Static application; does not install or execute discovered code. |
+| **[InWork POC](https://github.com/zopair/inwork-poc)** · [Preview](https://zopair.github.io/inwork-poc/) | Early mobile-oriented prototype for technical-services marketplace workflows. | Interactive simulation; sample profiles, payments, and tracking are not live transactions. |
+| **[NexaPay](https://github.com/zopair/NexaPay-Nexa-Next-Generation-Pay)** | Arabic-first concept UI for international freelance balances and EGP/USD conversion flows. | Static financial interface concept; values are fictional and transfers are simulated. |
+| **[CarExit Platform](https://github.com/zopair/-CarExit-Platform)** | Local vehicle-cost calculator and marketplace concept. | Browser/local-storage prototype; no backend, accounts, or lender integration. |
+
+### Publishing and digital products
+
+| Project | Engineering focus | Scope and limitations |
+|---|---|---|
+| **[Amazon KDP Engine](https://github.com/zopair/Amazon)** | Original children's coloring-book production tooling and PDF quality checks. | Production tooling PoC; publishing remains manual and owner-controlled. |
+| **[The Happy Little Train](https://github.com/zopair/Amazon-work-)** | Bilingual Arabic/English 24-page children's paperback production and validation pipeline. | Build pipeline PoC; KDP acceptance and publication require human review. |
+
+Repositories that are empty, skeleton-only, private reference libraries, or documentation placeholders are intentionally not promoted as finished products. Their README files state their current status.
 
 ## Core Engineering Areas
 
-- **AI Agent Engineering:** task planning, orchestration, tool-use workflows, bounded execution, and approval-aware automation.
-- **Full-Stack Product Development:** browser applications, responsive interfaces, static web products, and progressive web apps.
-- **Automation & DevOps:** GitHub Actions, CI workflows, repository automation, and static deployment.
-- **Applied AI Security Research:** trust boundaries, defensive testing, telemetry, and evidence-oriented evaluation.
-- **Software Architecture:** modular design, API integration, maintainability, and technical documentation.
-- **Verification:** unit testing, browser smoke testing, regression checks, and reproducible demonstrations.
+- **AI Agent Systems:** planning, orchestration, tool-use workflows, local inference, bounded execution, and human approval.
+- **Software Architecture:** modular design, maintainability, integration boundaries, and implementation trade-offs.
+- **Automation & DevOps:** GitHub Actions, CI workflows, repository automation, artifact delivery, and static deployment.
+- **Full-Stack & Browser Products:** responsive web interfaces, browser-local processing, and progressive web application concepts.
+- **Applied AI Security:** defensive testing, trust boundaries, telemetry, and evidence-oriented evaluation.
+- **Media & Document Pipelines:** Python automation, PDF generation and validation, narration, subtitles, and FFmpeg rendering.
+- **Verification & Technical Communication:** unit tests, browser smoke tests, regression checks, reproducible demos, and precise project documentation.
 
 ## Technologies Across My Repositories
 
-Python · JavaScript · HTML5 · CSS3 · Node.js · Flask · REST APIs · SQLite · GitHub Actions · GitHub Pages · Playwright · pytest · Progressive Web Apps
+Python · JavaScript · HTML5 · CSS3 · Node.js · SQLite · Flask · FastAPI · Cloudflare Workers · GitHub Actions · GitHub Pages · Playwright · pytest · llama.cpp · GGUF · FFmpeg · REST APIs
 
-This is a cross-project technology index, not a claim that every technology is used in every repository. Exact versions and installation requirements are documented per project.
+This is a cross-project index, not a claim that every technology is used in every repository. Exact versions, dependencies, setup steps, tests, and limitations are documented in each project's README.
 
 ## Engineering Principles
 
-1. Solve the real problem before adding technology.
-2. Prefer the smallest architecture that works.
-3. Build and verify usable functionality in small increments.
-4. Separate implemented capabilities from plans, assumptions, and simulations.
-5. Attribute upstream work accurately; never present a fork as original authorship.
-6. Favor open-source, cost-conscious, and GitHub-native delivery.
+1. Solve the actual problem before adding technology.
+2. Prefer the smallest architecture that works and can be maintained.
+3. Build and verify functionality in small, reviewable increments.
+4. Separate implemented capabilities from plans, simulations, and external dependencies.
+5. Keep automation bounded and require owner approval for consequential actions.
+6. Attribute upstream work accurately; never present a fork as original authorship.
+7. Favor open-source, cost-conscious, and GitHub-native delivery.
 
 ## Background
 
 - **Role:** Founder, Zubair Investment
 - **Academic background:** Master's degree in Mathematics; doctoral studies
 - **Languages:** Arabic and English
-- **Areas of interest:** AI systems, software architecture, automation, web products, and applied security research
+- **Professional interests:** AI systems, software architecture, automation, web products, and applied security research
 
 ## بالعربية
 
-أنا علي حسين زبير، مؤسس شركة الزبير للاستثمار، وأعمل على تصميم وتطوير أنظمة الذكاء الاصطناعي، ووكلاء المهام، وأدوات الأتمتة، وتطبيقات الويب.
+أنا علي حسين زبير، مؤسس شركة الزبير للاستثمار. أعمل على تصميم وتطوير أنظمة الذكاء الاصطناعي ووكلاء المهام، وهندسة البرمجيات، والأتمتة، وتطبيقات الويب، وأدوات إنتاج المحتوى والمنتجات الرقمية.
 
-يركز عملي على تحليل المشكلة، وتصميم المعمارية، والتنفيذ، والاختبار، والتوثيق، مع تفضيل الحلول مفتوحة المصدر والهياكل العملية القابلة للصيانة.
+يمتد عملي من تحليل المشكلة وتصميم المعمارية إلى التنفيذ والاختبار والتوثيق، مع تفضيل الحلول مفتوحة المصدر، والتكلفة التشغيلية المنخفضة، والأنظمة القابلة للصيانة، وحدود التشغيل والموافقة الواضحة.
 
-تعرض هذه الصفحة مشروعات أمتلكها أو أشارك فعليًا في تطويرها، مع توضيح حالة كل مشروع وحدود تنفيذه. لا أحتسب المستودعات المنسوخة (Forks) ضمن أعمالي الأصلية، ولا أنسب لنفسي ملكية أو تأليف مشروعات الآخرين. وتظل حقوق الكود الأصلي محفوظة لأصحابه، ولا تُنسب أي مساهمة خارجية إليّ إلا بقدر ما تثبته مساهماتي الفعلية.
+تعرض هذه الصفحة مشروعات أمتلكها أو أشارك فعليًا في تطويرها، مع توضيح حالة كل مشروع وحدود التنفيذ. لا أحتسب المستودعات المفروكة (Forks) ضمن أعمالي الأصلية، ولا أنسب لنفسي ملكية أو تأليف مشروعات الآخرين. وتظل حقوق الكود الأصلي محفوظة لأصحابه، ولا تُنسب أي مساهمة خارجية إليّ إلا بقدر ما يثبته سجل المستودع.
 
-**المشروعات الرئيسية:** ZForge لهندسة الوكلاء وسير العمل البرمجي، Siren لأبحاث أمن وكلاء الذكاء الاصطناعي، Zubair AI Army لتجارب الأنظمة والأتمتة، Sovereign AI Arsenal لاستخبارات المستودعات، WAKEEL لنموذج TradeTech، وZubair Engineering Lab لعرض الأعمال والأدلة الهندسية.
+**أبرز مجالات ومشروعات العمل:** هندسة وكلاء الذكاء الاصطناعي، ومحرك ENGINE، ومنصة ZForge، وأبحاث Siren الأمنية، وأتمتة المنتجات الرقمية عبر instinct-automation، ومحرك الفيديو العربي والإنجليزي RelayMind Core، إلى جانب مشروعات الويب مثل ARAGON وInWork وAgentProof، وأدوات إنتاج الكتب والمنتجات الرقمية.
 
-تختلف مراحل نضج المشروعات؛ لذلك أميز بين التنفيذ الفعلي والنماذج الأولية والمحاكاة والخطط المستقبلية، ولا أصف نموذجًا أوليًا بأنه منتج مكتمل أو مطروح تجاريًا.
+أوضح دائمًا الفرق بين المنتج المنفذ والنموذج الأولي والمحاكاة والخطة المستقبلية. وجود المشروع في GitHub لا يعني أنه مكتمل أو مطروح تجاريًا أو معتمد أمنيًا أو ماليًا.
 
 ---
 
