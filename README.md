@@ -111,6 +111,19 @@ This is a cross-project index, not a claim that every technology is used in ever
 
 أوضح دائمًا الفرق بين المنتج المنفذ والنموذج الأولي والمحاكاة والخطة المستقبلية. وجود المشروع في GitHub لا يعني أنه مكتمل أو مطروح تجاريًا أو معتمد أمنيًا أو ماليًا.
 
+## Automated Demo Verification
+
+The repository includes a dependency-free Node.js check for the public GitHub Pages demos linked above. The check runs on relevant pull requests, pushes to `main`, and manual dispatch. It verifies HTTPS reachability and HTTP success; it does not certify application functionality, accessibility, or visual correctness.
+
+Run locally with Node.js 22 or later:
+
+```bash
+node --test scripts/check-demo-links.test.mjs
+node scripts/check-demo-links.mjs
+```
+
+The first workflow run provides the initial live availability report. A successful HTTP response is not a substitute for browser-based end-to-end testing.
+
 ---
 
 <div align="center">
