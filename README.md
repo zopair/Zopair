@@ -42,6 +42,19 @@ This profile highlights selected projects I own or actively develop. **Forked re
 | **[InWork](https://github.com/zopair/inwork)** | Arabic-first, mobile-oriented platform for profiles and opportunity discovery. | PWA prototype. |
 | **[WAKEEL](https://github.com/zopair/WAKEEL)** | TradeTech sandbox concept for digital export-marketing workflows. | Concept and prototype; not represented as a launched commercial platform. |
 
+## Additional Projects & Engineering Labs
+
+| Repository | Work focus | Current scope |
+| --- | --- | --- |
+| **[Engine-](https://github.com/zopair/Engine-)** | GitHub-native platform concept for creating, managing, and evolving AI agents and workflows. | Active engineering PoC; GitHub Actions/Pages architecture and runtime limits are documented in the repository. |
+| **[Zubair AI Army](https://github.com/zopair/Zubair_AI_Army)** | Portfolio of AI product experiments with a bounded repository-operations worker and modular execution foundations. | PoC / MVP; the repository distinguishes its implemented worker from separate product tracks and planned capabilities. |
+| **[Sovereign AI Arsenal](https://github.com/zopair/Sovereign-AI-Arsenal)** | Repository discovery, technical evaluation, trend intelligence, semantic search, and provider-neutral AI integration. | PoC / MVP; operational dependencies and deployment boundaries are documented in the repository. |
+| **[AI Cinematic Studio](https://github.com/zopair/ai-cinematic-studio)** | Local-first, open-source video-production workflow with planning, storyboards, procedural visuals, rendering, and QA. | Early prototype; procedural output is distinguished from AI-generated video, and optional model backends are not claimed as tested. |
+| **[Amazon KDP Production Engine](https://github.com/zopair/Amazon)** | Automated production and quality checks for original children's coloring-book interiors and covers. | Production-tooling prototype; publishing remains manual and requires owner approval. |
+| **[SINC-OS](https://github.com/zopair/SINC-OS)** | Experiments in autonomous media workflows and an AI gateway/orchestrator service stack. | Separate PoC tracks; repository documentation states that they are not yet integrated. |
+| **[CLT Platform](https://github.com/zopair/CLT-Platform)** · **[CLT Core Monorepo](https://github.com/zopair/CLT-Core-Monorepo)** | Sovereign orchestration and core workspace concepts for the Cloudy_Lap_top ecosystem. | Architecture / early development repositories; no production-scale deployment is claimed. |
+| **[Zubair Hunter AI](https://github.com/zopair/Zubair-Hunter-AI)** | Early concept for a sovereign AI-agent workspace under the Cloudy_Lap_top direction. | Concept repository; proposed capabilities are not represented as verified operational features. |
+
 Project stages differ. A repository link is not, by itself, a claim that a project is complete, commercially launched, independently certified, or production-ready. Each repository's documentation is the reference for its implemented features, tests, limitations, and roadmap.
 
 ## Engineering Principles
